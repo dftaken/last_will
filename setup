@@ -1,0 +1,12 @@
+# Setup file for last will environment
+
+echo "Sourcing last_will setup"
+
+export ROOT_DIR=$PWD
+export MAKE_VARS=$ROOT_DIR/make.vars
+
+export BUILD_TGT=linux_x86_64
+export BUILD_DIR=$PWD/$BUILD_TGT
+export LD_LIBRARY_PATH=$BUILD_DIR:$LD_LIBRARY_PATH
+
+export PATH=$BUILD_DIR:$PATH

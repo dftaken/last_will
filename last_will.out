@@ -1,0 +1,4860 @@
+# of cards loaded in library = 140
+Max num upgrade levels for events = 4
+Registering players
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~ STARTING GAME #1 ~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Initializing gameboard
+Starting game
+Starting round = 1
+~~~ Phase: Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GameBoard State
+Round: 1
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", BreedersFair
+   2) 0, "", OldFriend_3
+   3) 0, "", EstateAgent_S1
+   4) 0, "", TownHouse_3
+   5) 0, "", Dog_1
+   6) 0, "", Dog_3
+   7) 0, "", WildCard_2
+   8) 0, "", TownHouse_4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Planning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Player Planning Order:
+   1) AI_3
+   2) AI_1
+   3) AI_2
+AI_3 picked plan 6
+GameBoard State
+Round: 1
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_3", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", BreedersFair
+   2) 0, "", OldFriend_3
+   3) 0, "", EstateAgent_S1
+   4) 0, "", TownHouse_3
+   5) 0, "", Dog_1
+   6) 0, "", Dog_3
+   7) 0, "", WildCard_2
+   8) 0, "", TownHouse_4
+AI_1 picked plan 1
+GameBoard State
+Round: 1
+Plans (Player, Priority, Cards, Errands, Actions):
+   "AI_1", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_3", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", BreedersFair
+   2) 0, "", OldFriend_3
+   3) 0, "", EstateAgent_S1
+   4) 0, "", TownHouse_3
+   5) 0, "", Dog_1
+   6) 0, "", Dog_3
+   7) 0, "", WildCard_2
+   8) 0, "", TownHouse_4
+AI_2 picked plan 2
+GameBoard State
+Round: 1
+Plans (Player, Priority, Cards, Errands, Actions):
+   "AI_1", 1, 5, 2, 1
+   "AI_2", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_3", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", BreedersFair
+   2) 0, "", OldFriend_3
+   3) 0, "", EstateAgent_S1
+   4) 0, "", TownHouse_3
+   5) 0, "", Dog_1
+   6) 0, "", Dog_3
+   7) 0, "", WildCard_2
+   8) 0, "", TownHouse_4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Errands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI_1 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 0
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+Hand State:
+# of cards: 9
+Cards:
+   Mansion_4
+   SchoolChum_3
+   ManorHouse_3
+   Dog_5
+   Horse_1
+   Dog_4
+   Farm_7
+   EstateAgent_S1
+   Dog_3
+AI_2 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 0
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+Hand State:
+# of cards: 6
+Cards:
+   GentlemensClub_2
+   Steward_2
+   Reservation_3
+   EstateAgent_2
+   Dog_1
+   TownHouse_3
+actions.size() = 1
+AI_3 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 0
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+Hand State:
+# of cards: 6
+Cards:
+   Farm_5
+   Gardener_1
+   Guest_2
+   Chef_1
+   TownHouse_4
+   BreedersFair
+AI_3 choosing action:
+Play: BreedersFair
+   Money = 0
+   EventAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 1
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+AI_3 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 0
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+Hand State:
+# of cards: 5
+Cards:
+   Farm_5
+   Gardener_1
+   Guest_2
+   Chef_1
+   TownHouse_4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: End of Round ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI_1 discarded Farm
+AI_1 discarded Horse
+AI_1 discarded EstateAgent
+AI_1 discarded Dog
+AI_1 discarded Dog
+AI_1 discarded EstateAgent
+AI_1 discarded Dog
+AI_2 discarded Reservation
+AI_2 discarded Dog
+AI_2 discarded Dog
+AI_2 discarded Dog
+AI_3 discarded Guest
+AI_3 discarded Farm
+AI_3 discarded Gardener
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting round = 2
+~~~ Phase: Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GameBoard State
+Round: 2
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", OldFriend_4
+   2) 0, "", Steward_S1
+   3) 0, "", Steward_S2
+   4) 0, "", Mansion_5
+   5) 0, "", Horse_2
+   6) 0, "", Chef_5
+   7) 0, "", WildCard_1
+   8) 0, "", ManorHouse_1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Planning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Player Planning Order:
+   1) AI_1
+   2) AI_2
+   3) AI_3
+AI_1 picked plan 5
+GameBoard State
+Round: 2
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "AI_1", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", OldFriend_4
+   2) 0, "", Steward_S1
+   3) 0, "", Steward_S2
+   4) 0, "", Mansion_5
+   5) 0, "", Horse_2
+   6) 0, "", Chef_5
+   7) 0, "", WildCard_1
+   8) 0, "", ManorHouse_1
+AI_2 picked plan 6
+GameBoard State
+Round: 2
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "AI_1", 5, 1, 1, 4
+   "AI_2", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", OldFriend_4
+   2) 0, "", Steward_S1
+   3) 0, "", Steward_S2
+   4) 0, "", Mansion_5
+   5) 0, "", Horse_2
+   6) 0, "", Chef_5
+   7) 0, "", WildCard_1
+   8) 0, "", ManorHouse_1
+AI_3 picked plan 3
+GameBoard State
+Round: 2
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "AI_3", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "AI_1", 5, 1, 1, 4
+   "AI_2", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", OldFriend_4
+   2) 0, "", Steward_S1
+   3) 0, "", Steward_S2
+   4) 0, "", Mansion_5
+   5) 0, "", Horse_2
+   6) 0, "", Chef_5
+   7) 0, "", WildCard_1
+   8) 0, "", ManorHouse_1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Errands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI_3 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 0
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+Hand State:
+# of cards: 3
+Cards:
+   Chef_1
+   TownHouse_4
+   OldFriend_4
+AI_3 choosing action:
+Play: OldFriend
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+AI_3 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+Hand State:
+# of cards: 2
+Cards:
+   Chef_1
+   TownHouse_4
+AI_3 choosing action:
+Play: Farm
+   Money = 12
+   BoardSpot = 1
+   BuySellFarmAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+AI_3 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "TownHouse_4", 1, 0, 0
+Hand State:
+# of cards: 1
+Cards:
+   Chef_1
+AI_3 choosing action:
+Activate: OldFriend
+Processing Activate Action
+Done processing action
+Action processed.
+
+AI_3 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "TownHouse_4", 1, 0, 0
+Hand State:
+# of cards: 1
+Cards:
+   Chef_1
+AI_3 choosing action:
+Sell: Farm
+   Money = -12
+   BuySellFarmAction = 1
+Processing Sell Action
+Done processing action
+Action processed.
+
+AI_3 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+Hand State:
+# of cards: 1
+Cards:
+   Chef_1
+AI_1 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 0
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+Hand State:
+# of cards: 5
+Cards:
+   Mansion_4
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+   Steward_S2
+AI_1 choosing action:
+Play: Mansion
+   Money = 13
+   BoardSpot = 1
+   BuySellNonFarmAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Mansion_4", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+   Steward_S2
+AI_1 choosing action:
+Play: Steward
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Mansion_4", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Mansion_4", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+AI_1 choosing action:
+Expense: Mansion
+   Money = 2
+   NonFarmUpkeepAction = 1
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Mansion_4", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+mods.size() = 0
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Mansion_4", 1, 0, 1
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Mansion_4", 1, 0, 1
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+AI_1 choosing action:
+Sell: Mansion
+   Money = -13
+   BuySellNonFarmAction = 1
+Processing Sell Action
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+AI_1 choosing action:
+Activate: Steward
+Processing Activate Action
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+AI_1 choosing action:
+Expense: Steward
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 0
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+mods.size() = 0
+Done processing action
+Action processed.
+
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 1
+Hand State:
+# of cards: 3
+Cards:
+   SchoolChum_3
+   ManorHouse_3
+   Guest_4
+AI_2 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 0
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+Hand State:
+# of cards: 8
+Cards:
+   GentlemensClub_2
+   Steward_2
+   EstateAgent_2
+   TownHouse_3
+   ManorHouse_4
+   Reservation_2
+   Horse_2
+   WildCard_1
+AI_2 choosing action:
+Play: ManorHouse
+   Money = 8
+   BoardSpot = 1
+   BuySellNonFarmAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+AI_2 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "ManorHouse_4", 1, 0, 0
+Hand State:
+# of cards: 7
+Cards:
+   GentlemensClub_2
+   Steward_2
+   EstateAgent_2
+   TownHouse_3
+   Reservation_2
+   Horse_2
+   WildCard_1
+AI_2 choosing action:
+Sell: ManorHouse
+   Money = -8
+   BuySellNonFarmAction = 1
+Processing Sell Action
+Done processing action
+Action processed.
+
+AI_2 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 0
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+Hand State:
+# of cards: 7
+Cards:
+   GentlemensClub_2
+   Steward_2
+   EstateAgent_2
+   TownHouse_3
+   Reservation_2
+   Horse_2
+   WildCard_1
+AI_2 choosing action:
+Play: EstateAgent
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+AI_2 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   GentlemensClub_2
+   Steward_2
+   TownHouse_3
+   Reservation_2
+   Horse_2
+   WildCard_1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: End of Round ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI_1 discarded SchoolChum
+AI_2 discarded Steward
+AI_2 discarded Steward
+AI_2 discarded GentlemensClub
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting round = 3
+~~~ Phase: Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GameBoard State
+Round: 3
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", SchoolChum_S
+   2) 0, "", WildParty
+   3) 0, "", OldFriend_2
+   4) 0, "", Mansion_1
+   5) 0, "", Guest_5
+   6) 0, "", Guest_3
+   7) 0, "", WildCard_1
+   8) 0, "", Soiree_2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Planning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Player Planning Order:
+   1) AI_2
+   2) AI_3
+   3) AI_1
+AI_2 picked plan 6
+GameBoard State
+Round: 3
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_2", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", SchoolChum_S
+   2) 0, "", WildParty
+   3) 0, "", OldFriend_2
+   4) 0, "", Mansion_1
+   5) 0, "", Guest_5
+   6) 0, "", Guest_3
+   7) 0, "", WildCard_1
+   8) 0, "", Soiree_2
+AI_3 picked plan 1
+GameBoard State
+Round: 3
+Plans (Player, Priority, Cards, Errands, Actions):
+   "AI_3", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_2", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", SchoolChum_S
+   2) 0, "", WildParty
+   3) 0, "", OldFriend_2
+   4) 0, "", Mansion_1
+   5) 0, "", Guest_5
+   6) 0, "", Guest_3
+   7) 0, "", WildCard_1
+   8) 0, "", Soiree_2
+AI_1 picked plan 5
+GameBoard State
+Round: 3
+Plans (Player, Priority, Cards, Errands, Actions):
+   "AI_3", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "AI_1", 5, 1, 1, 4
+   "AI_2", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", SchoolChum_S
+   2) 0, "", WildParty
+   3) 0, "", OldFriend_2
+   4) 0, "", Mansion_1
+   5) 0, "", Guest_5
+   6) 0, "", Guest_3
+   7) 0, "", WildCard_1
+   8) 0, "", Soiree_2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Errands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI_3 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Chef_1
+   Carriage_2
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   SchoolChum_S
+   WildCard_1
+AI_3 choosing action:
+Play: SchoolChum
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+Hand State:
+# of cards: 7
+Cards:
+   Chef_1
+   Carriage_2
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+Hand State:
+# of cards: 7
+Cards:
+   Chef_1
+   Carriage_2
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+AI_3 choosing action:
+Activate: OldFriend
+Processing Activate Action
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+Hand State:
+# of cards: 7
+Cards:
+   Chef_1
+   Carriage_2
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+Hand State:
+# of cards: 7
+Cards:
+   Chef_1
+   Carriage_2
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+AI_3 choosing action:
+Play: Carriage
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+AI_3 choosing action:
+Expense: SchoolChum
+   Money = 2
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+mods.size() = 0
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+AI_3 choosing action:
+Expense: Carriage
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+mods.size() = 0
+Done processing action
+Action processed.
+
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 1
+Hand State:
+# of cards: 6
+Cards:
+   Chef_1
+   Horse_3
+   TrainingGround_5
+   Chef_3
+   Horse_4
+   WildCard_1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   ManorHouse_3
+   Guest_4
+   Chef_2
+   Chef_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   ManorHouse_3
+   Guest_4
+   Chef_2
+   Chef_4
+AI_1 choosing action:
+Play: ManorHouse
+   Money = 18
+   BoardSpot = 1
+   BuySellNonFarmAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "ManorHouse_3", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Chef_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "ManorHouse_3", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Chef_4
+AI_1 choosing action:
+Activate: Steward
+Processing Activate Action
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "ManorHouse_3", 1, 0, 0
+   "Steward_S2", 1, 1, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Chef_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "ManorHouse_3", 1, 0, 0
+   "Steward_S2", 1, 1, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Chef_4
+AI_1 choosing action:
+Sell: ManorHouse
+   Money = -18
+   BuySellNonFarmAction = 1
+Processing Sell Action
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Chef_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Chef_4
+AI_1 choosing action:
+Expense: Steward
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Chef_4
+mods.size() = 0
+Done processing action
+Action processed.
+
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 1
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Chef_4
+AI_2 State:
+Board State:
+# Available Spots: 7
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   TownHouse_3
+   Reservation_2
+   Horse_2
+   Farm_10
+   Horse_5
+   OldFriend_2
+AI_2 choosing action:
+Play: Farm
+   Money = 12
+   BoardSpot = 1
+   BuySellFarmAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+AI_2 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   TownHouse_3
+   Reservation_2
+   Horse_2
+   Horse_5
+   OldFriend_2
+AI_2 choosing action:
+Play: Reservation
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   TownHouse_3
+   Horse_2
+   Horse_5
+   OldFriend_2
+mods.size() = 0
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   TownHouse_3
+   Horse_2
+   Horse_5
+   OldFriend_2
+AI_2 choosing action:
+Play: Farm
+   Money = 10
+   BoardSpot = 1
+   BuySellFarmAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Horse_2
+   Horse_5
+   OldFriend_2
+mods.size() = 0
+AI_2 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Horse_2
+   Horse_5
+   OldFriend_2
+AI_2 choosing action:
+Expense: Reservation
+   Money = 2
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Horse_2
+   Horse_5
+   OldFriend_2
+mods.size() = 0
+Done processing action
+Action processed.
+
+AI_2 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+   "Reservation_2", 1, 0, 1
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Horse_2
+   Horse_5
+   OldFriend_2
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: End of Round ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI_1 discarded Chef
+AI_2 discarded OldFriend
+AI_3 discarded Chef
+AI_3 discarded Chef
+AI_3 discarded TrainingGround
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting round = 4
+~~~ Phase: Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GameBoard State
+Round: 4
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", Ball_S
+   2) 0, "", HecticDay_1
+   3) 0, "", WildCard_2
+   4) 0, "", BoatTrip_4
+   5) 0, "", Dog_2
+   6) 0, "", Guest_1
+   7) 0, "", WildCard_1
+   8) 0, "", Dinner_6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Planning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Player Planning Order:
+   1) AI_3
+   2) AI_1
+   3) AI_2
+AI_3 picked plan 4
+GameBoard State
+Round: 4
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "AI_3", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", Ball_S
+   2) 0, "", HecticDay_1
+   3) 0, "", WildCard_2
+   4) 0, "", BoatTrip_4
+   5) 0, "", Dog_2
+   6) 0, "", Guest_1
+   7) 0, "", WildCard_1
+   8) 0, "", Dinner_6
+AI_1 picked plan 3
+GameBoard State
+Round: 4
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "AI_1", 3, 0, 2, 3
+   "AI_3", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", Ball_S
+   2) 0, "", HecticDay_1
+   3) 0, "", WildCard_2
+   4) 0, "", BoatTrip_4
+   5) 0, "", Dog_2
+   6) 0, "", Guest_1
+   7) 0, "", WildCard_1
+   8) 0, "", Dinner_6
+AI_2 picked plan 2
+GameBoard State
+Round: 4
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "AI_2", 2, 2, 2, 2
+   "AI_1", 3, 0, 2, 3
+   "AI_3", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", Ball_S
+   2) 0, "", HecticDay_1
+   3) 0, "", WildCard_2
+   4) 0, "", BoatTrip_4
+   5) 0, "", Dog_2
+   6) 0, "", Guest_1
+   7) 0, "", WildCard_1
+   8) 0, "", Dinner_6
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Errands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Horse_2
+   Horse_5
+   Reservation_4
+   Guest_2
+   WildCard_2
+   Horse_1
+mods.size() = 0
+AI_2 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Farm_10", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Horse_2
+   Horse_5
+   Reservation_4
+   Guest_2
+   WildCard_2
+   Horse_1
+AI_2 choosing action:
+Sell: Farm
+   Money = -12
+   BuySellFarmAction = 1
+Processing Sell Action
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Horse_2
+   Horse_5
+   Reservation_4
+   Guest_2
+   WildCard_2
+   Horse_1
+mods.size() = 0
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Horse_2
+   Horse_5
+   Reservation_4
+   Guest_2
+   WildCard_2
+   Horse_1
+AI_2 choosing action:
+Expense: Reservation
+   Money = 2
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Horse_2
+   Horse_5
+   Reservation_4
+   Guest_2
+   WildCard_2
+   Horse_1
+mods.size() = 0
+Done processing action
+Action processed.
+
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 1
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Horse_2
+   Horse_5
+   Reservation_4
+   Guest_2
+   WildCard_2
+   Horse_1
+AI_2 choosing action:
+Expense: Farm
+   Money = 4
+   FarmUpkeepAction = 1
+Processing Expense Action
+Done processing action
+Action processed.
+
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 1
+   "TownHouse_3", 1, 0, 1
+Hand State:
+# of cards: 6
+Cards:
+   Horse_2
+   Horse_5
+   Reservation_4
+   Guest_2
+   WildCard_2
+   Horse_1
+actions.size() = 2
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   Dinner_6
+   BoatTrip_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   Dinner_6
+   BoatTrip_4
+AI_1 choosing action:
+Expense: Steward
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   Dinner_6
+   BoatTrip_4
+mods.size() = 0
+Done processing action
+Action processed.
+
+actions.size() = 2
+actions.size() = 1
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 1
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   Dinner_6
+   BoatTrip_4
+AI_1 choosing action:
+Activate: Steward
+Processing Activate Action
+Done processing action
+Action processed.
+
+actions.size() = 2
+actions.size() = 1
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 1
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   Dinner_6
+   BoatTrip_4
+AI_1 choosing action:
+Play: Dinner
+   Money = 2
+   EventAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 2
+actions.size() = 1
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 1
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 1
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   BoatTrip_4
+AI_1 choosing action:
+Play: BoatTrip
+   Money = 5
+   EventAction = 2
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 1
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 1, 1
+Hand State:
+# of cards: 2
+Cards:
+   Guest_4
+   Chef_2
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 13
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Waiter_1
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Tailor
+   Farm_1
+   Dog_3
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 13
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Waiter_1
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Tailor
+   Farm_1
+   Dog_3
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+Hand State:
+# of cards: 13
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Waiter_1
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Tailor
+   Farm_1
+   Dog_3
+AI_3 choosing action:
+Play: Tailor
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 2
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 3
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Waiter_1
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 3
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Waiter_1
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 3
+# Occupied Spots: 4
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Waiter_1
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+AI_3 choosing action:
+Play: Waiter
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 2
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+AI_3 choosing action:
+Expense: SchoolChum
+   Money = 2
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+AI_3 choosing action:
+Activate: OldFriend
+Processing Activate Action
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+AI_3 choosing action:
+Expense: Carriage
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+Done processing action
+Action processed.
+
+actions.size() = 2
+AI_3 State:
+Board State:
+# Available Spots: 2
+# Occupied Spots: 5
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Reservation_5
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+AI_3 choosing action:
+Play: Reservation
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 2
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 10
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 10
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+AI_3 choosing action:
+Expense: Reservation
+   Money = 2
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 10
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+Done processing action
+Action processed.
+
+actions.size() = 2
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+Hand State:
+# of cards: 10
+Cards:
+   Chef_1
+   Horse_3
+   Horse_4
+   Dog_4
+   Farm_9
+   Chef_4
+   Dinner_10
+   TownHouse_1
+   Farm_1
+   Dog_3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: End of Round ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI_2 discarded Horse
+AI_2 discarded Horse
+AI_2 discarded Horse
+AI_3 discarded Dinner
+AI_3 discarded TownHouse
+AI_3 discarded Horse
+AI_3 discarded Chef
+AI_3 discarded Dog
+AI_3 discarded Chef
+AI_3 discarded Dog
+AI_3 discarded Farm
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting round = 5
+~~~ Phase: Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GameBoard State
+Round: 5
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", HecticDay_3
+   2) 0, "", Dinner_S
+   3) 0, "", WildCard_1
+   4) 0, "", BoatTrip_1
+   5) 0, "", Dinner_5
+   6) 0, "", Chef_5
+   7) 0, "", WildCard_2
+   8) 0, "", Theatre_4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Planning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Player Planning Order:
+   1) AI_1
+   2) AI_2
+   3) AI_3
+AI_1 picked plan 6
+GameBoard State
+Round: 5
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_1", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", HecticDay_3
+   2) 0, "", Dinner_S
+   3) 0, "", WildCard_1
+   4) 0, "", BoatTrip_1
+   5) 0, "", Dinner_5
+   6) 0, "", Chef_5
+   7) 0, "", WildCard_2
+   8) 0, "", Theatre_4
+AI_2 picked plan 2
+GameBoard State
+Round: 5
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "AI_2", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_1", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", HecticDay_3
+   2) 0, "", Dinner_S
+   3) 0, "", WildCard_1
+   4) 0, "", BoatTrip_1
+   5) 0, "", Dinner_5
+   6) 0, "", Chef_5
+   7) 0, "", WildCard_2
+   8) 0, "", Theatre_4
+AI_3 picked plan 1
+GameBoard State
+Round: 5
+Plans (Player, Priority, Cards, Errands, Actions):
+   "AI_3", 1, 5, 2, 1
+   "AI_2", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_1", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", HecticDay_3
+   2) 0, "", Dinner_S
+   3) 0, "", WildCard_1
+   4) 0, "", BoatTrip_1
+   5) 0, "", Dinner_5
+   6) 0, "", Chef_5
+   7) 0, "", WildCard_2
+   8) 0, "", Theatre_4
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Errands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+actions.size() = 1
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 13
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   CarriageRide_2
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 13
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   CarriageRide_2
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 13
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   CarriageRide_2
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 13
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   CarriageRide_2
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+AI_3 choosing action:
+Play: CarriageRide
+   Money = 2
+   EventAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 1
+actions.size() = 2
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+AI_3 choosing action:
+Expense: Carriage
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+AI_3 choosing action:
+Expense: Reservation
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+AI_3 choosing action:
+Activate: OldFriend
+Processing Activate Action
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 1
+# Occupied Spots: 6
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+Hand State:
+# of cards: 12
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   ManorHouse_2
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+AI_3 choosing action:
+Play: ManorHouse
+   Money = 16
+   BoardSpot = 1
+   BuySellNonFarmAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 2
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+AI_3 choosing action:
+Expense: SchoolChum
+   Money = 2
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+mods.size() = 0
+Done processing action
+Action processed.
+
+actions.size() = 2
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 1
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 11
+Cards:
+   Horse_3
+   Dog_4
+   Chef_4
+   Farm_1
+   Chef_3
+   BoatTrip_3
+   SeaDog
+   Dog_1
+   Valet
+   WildCard_2
+   Dog_5
+actions.size() = 8
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Reservation_4
+   Guest_2
+   Guest_3
+   Gardener_2
+   BoatTrip_1
+   Chef_5
+mods.size() = 0
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Reservation_4
+   Guest_2
+   Guest_3
+   Gardener_2
+   BoatTrip_1
+   Chef_5
+AI_2 choosing action:
+Play: BoatTrip
+   Money = 6
+   EventAction = 2
+   Chef = 1
+   Guest = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 8
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   Reservation_4
+   Guest_2
+   Guest_3
+   Gardener_2
+   Chef_5
+mods.size() = 0
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   Reservation_4
+   Guest_2
+   Guest_3
+   Gardener_2
+   Chef_5
+AI_2 choosing action:
+Expense: Reservation
+   Money = 2
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 0
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   Reservation_4
+   Guest_2
+   Guest_3
+   Gardener_2
+   Chef_5
+mods.size() = 0
+Done processing action
+Action processed.
+
+AI_2 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "EstateAgent_2", 1, 0, 0
+   "Reservation_2", 1, 0, 1
+   "TownHouse_3", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   Reservation_4
+   Guest_2
+   Guest_3
+   Gardener_2
+   Chef_5
+actions.size() = 2
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+   Farm_2
+   Dinner_5
+   Theatre_4
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+   Farm_2
+   Dinner_5
+   Theatre_4
+AI_1 choosing action:
+Play: Theatre
+   Money = 3
+   EventAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 2
+actions.size() = 1
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 2
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+   Farm_2
+   Dinner_5
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+   Farm_2
+   Dinner_5
+AI_1 choosing action:
+Play: Dinner
+   Money = 2
+   EventAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 2
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+   Farm_2
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 6
+# Occupied Spots: 1
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+   Farm_2
+AI_1 choosing action:
+Play: Farm
+   Money = 9
+   BoardSpot = 1
+   BuySellFarmAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+AI_1 choosing action:
+Expense: Steward
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+mods.size() = 0
+Done processing action
+Action processed.
+
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 1
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+AI_1 choosing action:
+Activate: Steward
+Processing Activate Action
+Done processing action
+Action processed.
+
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 1, 1
+Hand State:
+# of cards: 3
+Cards:
+   Guest_4
+   Chef_2
+   Guest_5
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: End of Round ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+AI_1 discarded Guest
+AI_2 discarded Gardener
+AI_2 discarded Chef
+AI_2 discarded Reservation
+AI_3 discarded Valet
+AI_3 discarded Dog
+AI_3 discarded Valet
+AI_3 discarded Valet
+AI_3 discarded Dog
+AI_3 discarded Chef
+AI_3 discarded Farm
+AI_3 discarded Chef
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Starting round = 6
+~~~ Phase: Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+GameBoard State
+Round: 6
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", OldFriend_1
+   2) 0, "", EstateAgent_S2
+   3) 0, "", WildCard_1
+   4) 0, "", Dinner_1
+   5) 0, "", Dinner_2
+   6) 0, "", Dog_4
+   7) 0, "", WildCard_2
+   8) 0, "", Dinner_3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Planning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Player Planning Order:
+   1) AI_2
+   2) AI_3
+   3) AI_1
+AI_2 picked plan 6
+GameBoard State
+Round: 6
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "", 5, 1, 1, 4
+   "AI_2", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", OldFriend_1
+   2) 0, "", EstateAgent_S2
+   3) 0, "", WildCard_1
+   4) 0, "", Dinner_1
+   5) 0, "", Dinner_2
+   6) 0, "", Dog_4
+   7) 0, "", WildCard_2
+   8) 0, "", Dinner_3
+AI_3 picked plan 5
+GameBoard State
+Round: 6
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "AI_3", 5, 1, 1, 4
+   "AI_2", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", OldFriend_1
+   2) 0, "", EstateAgent_S2
+   3) 0, "", WildCard_1
+   4) 0, "", Dinner_1
+   5) 0, "", Dinner_2
+   6) 0, "", Dog_4
+   7) 0, "", WildCard_2
+   8) 0, "", Dinner_3
+AI_1 picked plan 2
+GameBoard State
+Round: 6
+Plans (Player, Priority, Cards, Errands, Actions):
+   "", 1, 5, 2, 1
+   "AI_1", 2, 2, 2, 2
+   "", 3, 0, 2, 3
+   "", 4, 7, 1, 2
+   "AI_3", 5, 1, 1, 4
+   "AI_2", 6, 2, 2, 3
+Property Market:
+   Player: ""
+   Farm Adjust       : -3
+   Town House Adjust : 3
+   Manor House Adjust: -2
+   Mansion Adjust    : 1
+Single Card Draws:
+   "AI_1", Empty
+   "AI_2", Empty
+   "AI_3", Empty
+Board Extensions:
+   1) 0, ""
+Opera (Occupied, Player):
+   0, ""
+Card Spots:
+   1) 0, "", OldFriend_1
+   2) 0, "", EstateAgent_S2
+   3) 0, "", WildCard_1
+   4) 0, "", Dinner_1
+   5) 0, "", Dinner_2
+   6) 0, "", Dog_4
+   7) 0, "", WildCard_2
+   8) 0, "", Dinner_3
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Errands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+~~~ Phase: Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Guest_4
+   Chef_2
+   Waiter_2
+   TownHouse_2
+   OldFriend_1
+   Dinner_1
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 5
+# Occupied Spots: 2
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+Hand State:
+# of cards: 6
+Cards:
+   Guest_4
+   Chef_2
+   Waiter_2
+   TownHouse_2
+   OldFriend_1
+   Dinner_1
+AI_1 choosing action:
+Play: Waiter
+   BoardSpot = 1
+   Action = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 1
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+   "Waiter_2", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   Guest_4
+   Chef_2
+   TownHouse_2
+   OldFriend_1
+   Dinner_1
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+   "Waiter_2", 1, 0, 0
+Hand State:
+# of cards: 5
+Cards:
+   Guest_4
+   Chef_2
+   TownHouse_2
+   OldFriend_1
+   Dinner_1
+AI_1 choosing action:
+Play: Dinner
+   Money = 2
+   EventAction = 1
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 1
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+   "Waiter_2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   TownHouse_2
+   OldFriend_1
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 0, 0
+   "Waiter_2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   TownHouse_2
+   OldFriend_1
+AI_1 choosing action:
+Activate: Steward
+Processing Activate Action
+Done processing action
+Action processed.
+
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 1, 0
+   "Waiter_2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   TownHouse_2
+   OldFriend_1
+mods.size() = 0
+AI_1 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 1, 0
+   "Waiter_2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   TownHouse_2
+   OldFriend_1
+AI_1 choosing action:
+Expense: Steward
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_1 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 1, 0
+   "Waiter_2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   TownHouse_2
+   OldFriend_1
+mods.size() = 0
+Done processing action
+Action processed.
+
+AI_1 State:
+Board State:
+# Available Spots: 4
+# Occupied Spots: 3
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "Farm_2", 1, 0, 0
+   "Steward_S2", 1, 1, 1
+   "Waiter_2", 1, 0, 0
+Hand State:
+# of cards: 4
+Cards:
+   Guest_4
+   Chef_2
+   TownHouse_2
+   OldFriend_1
+actions.size() = 2
+actions.size() = 6
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 9
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Ball_2
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 9
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Ball_2
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 9
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Ball_2
+   Dinner_2
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 9
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Ball_2
+   Dinner_2
+AI_3 choosing action:
+Play: Ball
+   Money = 8
+   EventAction = 4
+Processing Play Action
+Gameboard is processing a play action
+   generating possible actions by player
+actions.size() = 2
+actions.size() = 6
+actions.size() = 1
+   checking for matching action
+   executing the play
+Done processing action
+Action processed.
+
+actions.size() = 2
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+AI_3 choosing action:
+Expense: Reservation
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 0
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+Adding mod for effect "DinnerSpend1Extra"
+spot card id = "Waiter_1"
+Done processing action
+Action processed.
+
+actions.size() = 2
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 0, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+AI_3 choosing action:
+Activate: OldFriend
+Processing Activate Action
+Done processing action
+Action processed.
+
+actions.size() = 2
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+AI_3 choosing action:
+Expense: Carriage
+   Money = 1
+   Action = 0
+Processing Expense Action
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 0
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+Done processing action
+Action processed.
+
+actions.size() = 2
+actions.size() = 1
+void GameBoard::addHelperExpenseActions(GamePlayer::Ptr, Card::Ptr, Actions&)
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+mods.size() = 0
+AI_3 State:
+Board State:
+# Available Spots: 0
+# Occupied Spots: 7
+Occupied Spots (Card Id, Occupied, Activated, Expensed):
+   "OldFriend_4", 1, 1, 0
+   "SchoolChum_S", 1, 0, 0
+   "Carriage_2", 1, 0, 1
+   "Tailor", 1, 0, 0
+   "Waiter_1", 1, 0, 0
+   "Reservation_5", 1, 0, 1
+   "ManorHouse_2", 1, 0, 0
+Hand State:
+# of cards: 8
+Cards:
+   Horse_3
+   Chef_4
+   BoatTrip_3
+   SeaDog
+   Dog_5
+   Chef_5
+   Horse_4
+   Dinner_2
+AI_3 choosing action:
+Upgrade: Reservation
+   Action = 1
+   Chef = 2
+Processing Upgrade Action

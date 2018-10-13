@@ -9,7 +9,7 @@
 
 #include <cstddef>
 
-#include <stdio.h>
+#include <Logging.h>
 
 using namespace std;
 

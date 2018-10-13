@@ -5,8 +5,8 @@
  *      Author: milites
  */
 
-#include <stdio.h>
 #include <assets/CardSpot.h>
+#include <Logging.h>
 
 #include <stdexcept>
 

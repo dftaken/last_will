@@ -6,7 +6,7 @@
  */
 
 #include <assets/PlayerBoard.h>
-#include <stdio.h>
+#include <Logging.h>
 
 PlayerBoard::PlayerBoard(std::string name):
    playerName(name),

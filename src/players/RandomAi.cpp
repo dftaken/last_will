@@ -7,8 +7,8 @@
 
 #include <players/RandomAi.h>
 #include <system_utils/SysUtils.h>
-#include <stdio.h>
 #include <stdexcept>
+#include <Logging.h>
 
 using namespace std;
 

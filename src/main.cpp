@@ -10,9 +10,11 @@
 
 int main(int argc, char **argv)
 {
+   printf("starting\n");
    GameMaster gm;
 
-   gm.run();
+   gm.run(argc,argv);
 
+   printf("finished\n");
    return 0;
 }

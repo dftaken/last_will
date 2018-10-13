@@ -13,4 +13,4 @@ LIBS = \
    -lGameBoards
 
 all: $(SOURCE_FILES)
-	g++ -g -Wall -fPIC -shared $(INC_DIRS) $(SOURCE_FILES) $(LIB_DIRS) $(LIBS) -o $(BLD_DIR)/$(NAME)
+	g++ $(COMP_FLAGS) -fPIC -shared $(INC_DIRS) $(SOURCE_FILES) $(LIB_DIRS) $(LIBS) -o $(BLD_DIR)/$(NAME)

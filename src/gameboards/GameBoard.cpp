@@ -9,11 +9,9 @@
 
 #include <assets/cards/CardAttributes.h>
 #include <system_utils/SysUtils.h>
+#include <Logging.h>
 
 #include <stdexcept>
-
-// for testing sake
-#include <stdio.h>
 
 using namespace std;
 
@@ -242,6 +240,14 @@ bool GameBoard::processAction(GamePlayer::Ptr player, Action action)
          break;
    }
    printf("Done processing action\n");
+
+   // Cache the action
+   ActionData data;
+   data.player = player;
+   data.round = round;
+   data.action = action;
+   actionCache.push_back(data);
+
    return result;
 }
 
@@ -303,6 +309,12 @@ void GameBoard::initialize()
    initBoardExtensions();
    initOperaSpot();
    initCardSpots();
+
+   // Clear action cache
+   actionCache.clear();
+
+   // Clear last winner
+   lastWinner = NULL;
 }
 
 void GameBoard::executeSetup()
@@ -430,6 +442,58 @@ void GameBoard::executeEndOfRound()
                break;
          }
       }
+   }
+
+   // Perform final calculation of player scores if
+   // that was the final round
+   if (getNumRoundsRemaining() == 0)
+   {
+      PlayerData *winner = &(players.begin()->second);
+      for (PlayerStates::iterator itr = players.begin(); itr != players.end(); ++itr)
+      {
+         Resources &resources = itr->second.state->resources;
+         itr->second.state->finalPropertyCount = 0;
+         CardSpots spots = itr->second.state->board.getOccupiedSpots();
+         for (int i = 0; i < spots.size(); ++i)
+         {
+            Card::Ptr card = spots.at(i)->getCard();
+            if (card != NULL && card->group == CardGroup::Property)
+            {
+               // Need to add property value to end worth
+               int value = card->valueLevels[card->curValue].value;
+               value += propertyMarket.getPropertyAdjustment(card->name);
+               value += 5; // Penalty for having property at end of game
+               resources[Resource::Money] += value;
+               itr->second.state->finalPropertyCount++;
+            }
+         }
+
+         // Check if player beats out the winner
+         if (winner == &(itr->second))
+         {
+            // Do nothing
+         }
+         else if (resources[Resource::Money] < winner->state->resources[Resource::Money])
+         {
+            winner = &(itr->second);
+         }
+         else if (resources[Resource::Money] == winner->state->resources[Resource::Money])
+         {
+            if (itr->second.state->finalPropertyCount == winner->state->finalPropertyCount)
+            {
+               if (itr->second.state->finalPlanPriority < winner->state->finalPlanPriority)
+               {
+                  winner = &(itr->second);
+               }
+            }
+            else if (itr->second.state->finalPropertyCount < winner->state->finalPropertyCount)
+            {
+               winner = &(itr->second);
+            }
+         }
+      }
+
+      lastWinner = winner->player;
    }
 }
 

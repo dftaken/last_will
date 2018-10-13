@@ -8,9 +8,7 @@
 #include <assets/Deck.h>
 #include <assets/cards/CardLibrary.h>
 #include <system_utils/SysUtils.h>
-
-// For Testing
-#include <stdio.h>
+#include <Logging.h>
 
 using namespace std;
 

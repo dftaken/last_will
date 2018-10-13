@@ -7,6 +7,7 @@
 
 #include <assets/PropertyMarket.h>
 #include <system_utils/SysUtils.h>
+#include <Logging.h>
 
 using namespace std;
 

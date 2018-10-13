@@ -20,9 +20,11 @@ public:
    GameMaster();
    ~GameMaster();
 
-   void run();
+   void run(int, char**);
 
 protected:
+   void processCmdLine(int,char**);
+
    GameBoard::Ptr gameboard;
    Players players;
 

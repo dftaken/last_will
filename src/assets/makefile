@@ -23,4 +23,4 @@ Cards:
 	$(MAKE) -C cards MAKE_VARS=$(MAKE_VARS) all
 
 all: $(SOURCE_FILES) Cards
-	g++ -g -Wall -fPIC -shared $(INC_DIRS) $(SOURCE_FILES) $(LIB_DIRS) $(LIBS) -o $(BLD_DIR)/$(NAME)
+	g++ $(COMP_FLAGS) -fPIC -shared $(INC_DIRS) $(SOURCE_FILES) $(LIB_DIRS) $(LIBS) -o $(BLD_DIR)/$(NAME)

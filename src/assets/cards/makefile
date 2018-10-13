@@ -10,4 +10,4 @@ SOURCE_FILES = \
    CardLibrary.cpp
 
 all: $(SOURCE_FILES)
-	g++ -g -Wall -fPIC -shared $(INC_DIRS) $(SOURCE_FILES) -o $(BLD_DIR)/$(NAME)
+	g++ $(COMP_FLAGS) -fPIC -shared $(INC_DIRS) $(SOURCE_FILES) -o $(BLD_DIR)/$(NAME)

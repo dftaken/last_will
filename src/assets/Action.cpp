@@ -6,7 +6,39 @@
  */
 
 #include <assets/Action.h>
-#include <stdio.h>
+#include <Logging.h>
+
+std::string ActionType::toString(ActionTypeType type)
+{
+   switch (type)
+   {
+      case Invalid:
+         return "Invalid";
+         break;
+      case Play:
+         return "Play";
+         break;
+      case Upgrade:
+         return "Upgrade";
+         break;
+      case Expense:
+         return "Expense";
+         break;
+      case Activate:
+         return "Activate";
+         break;
+      case Sell:
+         return "Sell";
+         break;
+      case Discard:
+         return "Discard";
+         break;
+      default:
+         return "UNRECOGNIZED";
+         break;
+   }
+   return "SHIT IS SIDEWAYS";
+}
 
 Action::Action() :
    type(ActionType::Invalid),

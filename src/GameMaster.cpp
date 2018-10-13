@@ -6,8 +6,10 @@
  */
 
 #include <GameMaster.h>
-#include <stdio.h>
 #include <stdexcept>
+#include <Logging.h>
+#include <Logger.h>
+#include <string.h>
 
 // Gameboards
 #include <gameboards/GameBoard.h>
@@ -34,8 +36,10 @@ GameMaster::~GameMaster()
    }
 }
 
-void GameMaster::run()
+void GameMaster::run(int argc, char **argv)
 {
+   processCmdLine(argc,argv);
+
    gameboard = new GameBoard();
    players.push_back(new RandomAi("AI_1"));
    players.push_back(new RandomAi("AI_2"));
@@ -48,7 +52,7 @@ void GameMaster::run()
       (*itr)->setBoard(gameboard);
    }
 
-   for (int i = 0; i < 2; ++i)
+   for (int i = 0; i < 1000; ++i)
    {
       printf("\n\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
       printf("~~~ STARTING GAME #%d ~~~\n",i+1);
@@ -95,6 +99,33 @@ void GameMaster::run()
       {
          std::string name = (*itr)->getName().c_str();
          printf("%s: $%d\n",name.c_str(),gameboard->players[name].state->resources[Resource::Money]);
+      }
+      printf("Player %s won!\n",gameboard->lastWinner->getName().c_str());
+
+      for (size_t ndx = 0; ndx < gameboard->actionCache.size(); ++ndx)
+      {
+         bool won = gameboard->actionCache[ndx].player == gameboard->lastWinner;
+         Logger::instance().recordAction(
+            won,
+            gameboard->actionCache[ndx].player->getName(),
+            gameboard->actionCache[ndx].round,
+            gameboard->actionCache[ndx].action);
+      }
+      fprintf(stderr,"Finished game %d\n",i);
+   }
+}
+
+void GameMaster::processCmdLine(int argc, char **argv)
+{
+   for (int i = 0; i < argc; ++i)
+   {
+      if (strcmp(argv[i],"-o")==0 && (i+1) < argc)
+      {
+         if (!Logger::instance().openOutputFile(argv[i+1]))
+         {
+            fprintf(stderr,"Failed to open output file \"%s\"\n",argv[i+1]);
+            throw std::runtime_error("Failed to open output file.");
+         }
       }
    }
 }

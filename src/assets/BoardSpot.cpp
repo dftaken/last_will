@@ -5,8 +5,8 @@
  *      Author: milites
  */
 
-#include <stdio.h>
 #include <assets/BoardSpot.h>
+#include <Logging.h>
 
 #include <stdexcept>
 

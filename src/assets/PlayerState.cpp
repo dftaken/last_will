@@ -6,7 +6,7 @@
  */
 
 #include <assets/PlayerState.h>
-#include <stdio.h>
+#include <Logging.h>
 
 using namespace std;
 
@@ -15,7 +15,9 @@ PlayerState::PlayerState(std::string inName) :
    resources(),
    board(inName),
    hand(inName),
-   plan(NULL)
+   plan(NULL),
+   finalPropertyCount(0),
+   finalPlanPriority(0)
 {
    // Intentionally left blank
 }
@@ -34,6 +36,7 @@ void PlayerState::releasePlan()
 {
    if (plan != NULL)
    {
+      finalPlanPriority = plan->priority;
       plan->location = NULL;
       plan = NULL;
    }
@@ -96,6 +99,8 @@ void PlayerState::reset()
    board.reset();
    hand.reset();
    releasePlan();
+   finalPropertyCount = 0;
+   finalPlanPriority = 0;
 }
 
 void PlayerState::print()

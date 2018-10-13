@@ -25,6 +25,13 @@ struct PlayerData
    PlayerState::Ptr state;
 };
 
+struct ActionData
+{
+   GamePlayer::Ptr player;
+   int round;
+   Action action;
+};
+
 class GameBoard : public GameBoardInterface
 {
 public:
@@ -128,6 +135,10 @@ public:
 
    // Print Functions
    void printState();
+
+   // Logging Data
+   std::vector<ActionData> actionCache;
+   GamePlayer::Ptr lastWinner;
 };
 
 #endif /* GAMEBOARD_H_ */

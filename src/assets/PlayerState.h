@@ -46,6 +46,10 @@ public:
    PlayerBoard board;
    PlayerHand hand;
    Plan::Ptr plan;
+
+   // Only used for final determination of winner
+   int finalPropertyCount;
+   int finalPlanPriority;
 };
 
 #endif /* PLAYERSTATE_H_ */

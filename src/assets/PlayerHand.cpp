@@ -5,8 +5,8 @@
  *      Author: milites
  */
 
-#include <stdio.h>
 #include <assets/PlayerHand.h>
+#include <Logging.h>
 
 PlayerHand::PlayerHand(std::string name) :
    playerName(name),

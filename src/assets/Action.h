@@ -22,6 +22,7 @@ struct ActionType
       Sell,
       Discard
    };
+   static std::string toString(Type);
 };
 typedef ActionType::Type ActionTypeType;
 

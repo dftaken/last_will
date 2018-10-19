@@ -12,6 +12,35 @@
 
 using namespace std;
 
+string Spot::toString(SpotType type)
+{
+   switch (type)
+   {
+      case Invalid:
+         return "Invalid";
+         break;
+      case PropertyMarket:
+         return "PropertyMarket";
+         break;
+      case BoardExpansion:
+         return "BoardExpansion";
+         break;
+      case Opera:
+         return "Opera";
+         break;
+      case SingleDraw:
+         return "SingleDraw";
+         break;
+      case Card:
+         return "Card";
+         break;
+      default:
+         return "Unrecognized Type";
+         break;
+   }
+   return "Shit gone sideways";
+}
+
 BoardSpot::BoardSpot() :
    type(Spot::Invalid),
    occupied(false),
@@ -150,4 +179,17 @@ void BoardSpot::reset()
 void BoardSpot::releaseCard()
 {
    releaseCard(card);
+}
+
+void BoardSpot::print()
+{
+   printf("BoardSpot:\n");
+   printf("   Type: %s\n",Spot::toString(type).c_str());
+   printf("   Occupied: %d\n",occupied);
+   printf("   Player: %s\n",player.c_str());
+   if (card != NULL)
+      printf("   Card: %s\n",CardId::toString(card->id).c_str());
+   else
+      printf("   Card: None\n");
+//   printf("   Next Deck: %")
 }

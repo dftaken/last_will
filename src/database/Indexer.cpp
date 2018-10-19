@@ -11,7 +11,8 @@
 /* Round Permutations
  * 1 - 7
  */
-int Indexer::roundCount = 7;
+#define ROUND_COUNT 7
+int Indexer::roundCount = ROUND_COUNT;
 
 /* Action Type Permutations
  * 0 - Play
@@ -21,13 +22,15 @@ int Indexer::roundCount = 7;
  * 4 - Sell
  * 5 - Discard
  */
-int Indexer::actionTypeCount = 6;
+#define ACTIONTYPE_COUNT 6
+int Indexer::actionTypeCount = ACTIONTYPE_COUNT;
 
 /* Card Id Permutations
  * Card Ids Farm_1 - Steward_S2
  * # = 111
  */
-int Indexer::cardIdCount = 111;
+#define CARDID_COUNT 111
+int Indexer::cardIdCount = CARDID_COUNT;
 
 /* Money Cost Permutations
  * -8 - 30
@@ -35,20 +38,33 @@ int Indexer::cardIdCount = 111;
  * rest of the game uses negative cost to translate to money
  * going back to the player.
  */
-int Indexer::moneyCount = 39;
+#define MONEY_COUNT 39
+int Indexer::moneyCount = MONEY_COUNT;
 
 /* Action Count Permutations
  * 0 - 7
  */
-int Indexer::actionCount = 8;
+#define ACTION_COUNT 8
+int Indexer::actionCount = ACTION_COUNT;
 
 /* Companion Cost Permutations
  * H (horse), D (dog), G (guest), C (chef)
  * None, H, D, G, C, GDC, GD, GC, DC, GG, CC
  * ONLY FOR 15: HH, DH, DD, DDD
  */
-int Indexer::companionCount = 11;
+#define COMPANION_COUNT 11
+int Indexer::companionCount = COMPANION_COUNT;
 //int Indexer::companionCount = 15;
+
+/*
+ * Index Modifiers
+ */
+int Indexer::roundMod = ACTIONTYPE_COUNT * CARDID_COUNT * MONEY_COUNT * ACTION_COUNT * COMPANION_COUNT;
+int Indexer::actionTypeMod = CARDID_COUNT * MONEY_COUNT * ACTION_COUNT * COMPANION_COUNT;
+int Indexer::cardIdMod = MONEY_COUNT * ACTION_COUNT * COMPANION_COUNT;
+int Indexer::moneyMod = ACTION_COUNT * COMPANION_COUNT;
+int Indexer::actionMod = COMPANION_COUNT;
+int Indexer::companionMod = 1;
 
 /*****************************************************************************/
 
@@ -146,4 +162,112 @@ size_t Indexer::getActionNdx(
       throw std::runtime_error("Action ndx computed to be outside of expected bounds.");
 
    return ndx;
+}
+
+void Indexer::convertActionNdx(
+   size_t ndx,
+   int &round,
+   int &type,
+   int &cardId,
+   int &moneyCost,
+   int &actionCost,
+   int &horseCost,
+   int &dogCost,
+   int &chefCost,
+   int &guestCost)
+{
+   round = ndx / roundMod;
+   ndx -= round * roundMod;
+   round += 1;
+
+   type = ndx / actionTypeMod;
+   ndx -= type * actionTypeMod;
+   type += ActionType::Play;
+
+   cardId = ndx / cardIdMod;
+   ndx -= cardId * cardIdMod;
+   cardId += CardId::Farm_1;
+
+   moneyCost = ndx / moneyMod;
+   ndx -= moneyCost * moneyMod;
+   moneyCost -= 8;
+   if (type == ActionType::Sell)
+      moneyCost *= -1;
+
+   actionCost = ndx / actionMod;
+   ndx -= actionCost * actionMod;
+
+   unsigned int companionNdx = ndx / companionMod;
+   switch (companionNdx)
+   {
+      case 0:
+         horseCost = 0;
+         dogCost = 0;
+         chefCost = 0;
+         guestCost = 0;
+         break;
+      case 1:
+         horseCost = 1;
+         dogCost = 0;
+         chefCost = 0;
+         guestCost = 0;
+         break;
+      case 2:
+         horseCost = 0;
+         dogCost = 1;
+         chefCost = 0;
+         guestCost = 0;
+         break;
+      case 3:
+         horseCost = 0;
+         dogCost = 0;
+         chefCost = 1;
+         guestCost = 0;
+         break;
+      case 4:
+         horseCost = 0;
+         dogCost = 0;
+         chefCost = 0;
+         guestCost = 1;
+         break;
+      case 5:
+         horseCost = 0;
+         dogCost = 1;
+         chefCost = 1;
+         guestCost = 1;
+         break;
+      case 6:
+         horseCost = 0;
+         dogCost = 1;
+         chefCost = 0;
+         guestCost = 1;
+         break;
+      case 7:
+         horseCost = 0;
+         dogCost = 0;
+         chefCost = 1;
+         guestCost = 1;
+         break;
+      case 8:
+         horseCost = 0;
+         dogCost = 1;
+         chefCost = 1;
+         guestCost = 0;
+         break;
+      case 9:
+         horseCost = 0;
+         dogCost = 0;
+         chefCost = 0;
+         guestCost = 2;
+         break;
+      case 10:
+         horseCost = 0;
+         dogCost = 0;
+         chefCost = 2;
+         guestCost = 0;
+         break;
+      default:
+         throw std::runtime_error("Indexer messed up somewhere converting ndx to action elements.");
+         break;
+   }
 }

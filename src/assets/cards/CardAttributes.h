@@ -11,6 +11,7 @@
 #include <vector>
 #include <map>
 #include <string>
+#include <Logging.h>
 
 struct CardId
 {
@@ -312,6 +313,15 @@ struct Resources : public std::map<ResourceType,int>
          }
       }
       return result;
+   }
+
+   void print()
+   {
+      printf("Resources:\n");
+      for (std::map<ResourceType,int>::iterator itr = begin(); itr != end(); ++itr)
+      {
+         printf("   %s = %d\n",Resource::toString(itr->first).c_str(),itr->second);
+      }
    }
 };
 //typedef std::map<ResourceType,int> Resources;

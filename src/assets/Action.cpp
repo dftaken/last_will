@@ -106,3 +106,12 @@ void Action::print()
       printf("   %s = %d\n",name.c_str(),itr->second);
    }
 }
+
+void Actions::print()
+{
+   for (size_t i = 0; i < size(); ++i)
+   {
+      printf("Option %lu:\n",i);
+      at(i).print();
+   }
+}

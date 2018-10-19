@@ -20,6 +20,8 @@
 // Players
 #include <players/RandomAi.h>
 
+void testIndexer();
+
 static char threadSignal = 0;
 static char threadFinished = 0;
 #define GAME_PRINT_INCREMENT 100;
@@ -141,10 +143,7 @@ void GameMaster::run(int argc, char **argv)
       throw std::runtime_error("Failed to join thread.");
    }
 
-//   for (int i = 0; i < 10; ++i)
-//   {
-//      executeGame();
-//   }
+   testIndexer();
 
    fprintf(stderr,"Number of action permutations = %lu\n",Indexer::getNumActions());
 }
@@ -152,7 +151,7 @@ void GameMaster::run(int argc, char **argv)
 void GameMaster::executeGame(long unsigned int gameId)
 {
    printf("\n\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-   printf("~~~ STARTING GAME #%d ~~~\n",i+1);
+   printf("~~~ STARTING GAME #%lu ~~~\n",gameId);
    printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
 
    printf("Initializing gameboard\n");
@@ -213,7 +212,7 @@ void GameMaster::executeGame(long unsigned int gameId)
          gameboard->actionCache[ndx].round,
          gameboard->actionCache[ndx].action);
    }
-   printf(stderr,"Finished game %d\n",i);
+   printf("Finished game %lu\n",gameId);
 }
 
 void GameMaster::processCmdLine(int argc, char **argv)
@@ -235,6 +234,10 @@ void GameMaster::processCmdLine(int argc, char **argv)
             fprintf(stderr,"Failed to open database file \"%s\"\n",argv[i+1]);
             throw std::runtime_error("Failed to open database file.");
          }
+      }
+      else if (strcmp(argv[i],"-n")==0 && (i+1) < argc)
+      {
+         sscanf(argv[i+1],"%lu",&data.numGames);
       }
    }
 }
@@ -491,6 +494,8 @@ void GameMaster::removeAChoice(CardDeckTypes &choices, CardDeckType type)
 
 void GameMaster::processErrand(PlayerInterface::Ptr player, BoardSpot::Ptr errand)
 {
+   printf("%s picked errand:\n",player->getName().c_str());
+   errand->print();
    switch (errand->type)
    {
       case Spot::PropertyMarket:
@@ -606,4 +611,123 @@ bool GameMaster::validatePlayerEffects(PlayerInterface::Ptr player, Effects effe
    }
 
    return effectsValidated;
+}
+
+void testIndexer()
+{
+   // testing indexer
+   for (int round = 1; round <= 7; ++round)
+   {
+      for (int type = ActionType::Play; type <= ActionType::Discard; ++type)
+      {
+         for (int cid = CardId::Farm_1; cid <= CardId::Steward_S2; ++cid)
+         {
+            for (int mc = -8; mc <= 30; mc++)
+            {
+               int mcost = type == ActionType::Sell ? -1 * mc : mc;
+               for (int acost = 0; acost <= 7; ++acost)
+               {
+                  for (int cc = 0; cc <= 10; ++cc)
+                  {
+                     int h,d,c,g;
+                     switch (cc)
+                     {
+                        case 0:
+                           h = 0;
+                           d = 0;
+                           c = 0;
+                           g = 0;
+                           break;
+                        case 1:
+                           h = 1;
+                           d = 0;
+                           c = 0;
+                           g = 0;
+                           break;
+                        case 2:
+                           h = 0;
+                           d = 1;
+                           c = 0;
+                           g = 0;
+                           break;
+                        case 3:
+                           h = 0;
+                           d = 0;
+                           c = 1;
+                           g = 0;
+                           break;
+                        case 4:
+                           h = 0;
+                           d = 0;
+                           c = 0;
+                           g = 1;
+                           break;
+                        case 5:
+                           h = 0;
+                           d = 1;
+                           c = 1;
+                           g = 1;
+                           break;
+                        case 6:
+                           h = 0;
+                           d = 1;
+                           c = 0;
+                           g = 1;
+                           break;
+                        case 7:
+                           h = 0;
+                           d = 0;
+                           c = 1;
+                           g = 1;
+                           break;
+                        case 8:
+                           h = 0;
+                           d = 1;
+                           c = 1;
+                           g = 0;
+                           break;
+                        case 9:
+                           h = 0;
+                           d = 0;
+                           c = 0;
+                           g = 2;
+                           break;
+                        case 10:
+                           h = 0;
+                           d = 0;
+                           c = 2;
+                           g = 0;
+                           break;
+                        default:
+                           break;
+                     }
+
+                     size_t ndx = Indexer::getActionNdx(
+                        round, (ActionTypeType)type, (CardIdType)cid, mcost, acost, h, d, c, g);
+
+                     int ro, to, cido, mo, ao, ho, dO, co, go;
+                     Indexer::convertActionNdx(
+                        ndx,ro,to,cido,mo,ao,ho,dO,co,go);
+                     if (round != ro ||
+                         type != to ||
+                         cid != cido ||
+                         mcost != mo ||
+                         acost != ao ||
+                         h != ho ||
+                         d != dO ||
+                         c != co ||
+                         g != go)
+                     {
+                        fprintf(stderr,"%d %d %d %d %d %d %d %d %d\n",round,type,cid,mcost,acost,h,d,c,g);
+                        fprintf(stderr,"  !=\n");
+                        fprintf(stderr,"%d %d %d %d %d %d %d %d %d\n",ro,to,cido,mo,ao,ho,dO,co,go);
+                        throw std::runtime_error("Indexer not converting ndx properly.");
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+   fprintf(stderr,"Indexer seems to convert fine\n");
 }

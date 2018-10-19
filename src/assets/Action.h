@@ -40,6 +40,14 @@ public:
    Resources cost;
 };
 
-typedef std::vector<Action> Actions;
+class Actions : public std::vector<Action>
+{
+public:
+   Actions() {};
+   ~Actions() {};
+
+   void print();
+};
+//typedef std::vector<Action> Actions;
 
 #endif /* ACTION_H_ */

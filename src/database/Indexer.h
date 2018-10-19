@@ -26,6 +26,17 @@ public:
       int dogCost,
       int chefCost,
       int guestCost);
+   static void convertActionNdx(
+      size_t ndx,
+      int &round,
+      int &type,
+      int &cardId,
+      int &moneyCost,
+      int &actionCost,
+      int &horseCost,
+      int &dogCost,
+      int &chefCost,
+      int &guestCost);
 
 private:
    // Action Index Permutation Counts
@@ -35,6 +46,13 @@ private:
    static int moneyCount;
    static int actionCount;
    static int companionCount;
+
+   static int roundMod;
+   static int actionTypeMod;
+   static int cardIdMod;
+   static int moneyMod;
+   static int actionMod;
+   static int companionMod;
 };
 
 #endif /* INDEXER_H_ */

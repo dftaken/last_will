@@ -99,6 +99,7 @@ void PlayerState::reset()
    board.reset();
    hand.reset();
    releasePlan();
+   resources[Resource::BoardSpot] = board.getNumAvailSpots();
    finalPropertyCount = 0;
    finalPlanPriority = 0;
 }
@@ -108,4 +109,5 @@ void PlayerState::print()
    printf("%s State:\n",name.c_str());
    board.print();
    hand.print();
+   resources.print();
 }

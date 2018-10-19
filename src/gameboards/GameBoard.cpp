@@ -872,7 +872,6 @@ void GameBoard::addEventActionPermutations(GamePlayer::Ptr player,Card::Ptr card
          actions.push_back(action);
       }
    }
-   printf("actions.size() = %lu\n",actions.size());
 
    // Add permutations that arise from card effects
    Actions tmp = actions;
@@ -1093,9 +1092,7 @@ void GameBoard::addExpensePermutations(GamePlayer::Ptr player, Actions &actions)
 
 void GameBoard::addHelperExpenseActions(GamePlayer::Ptr player, Card::Ptr card, Actions &actions)
 {
-   printf("%s\n",__PRETTY_FUNCTION__);
    PlayerState::Ptr state = players[player->getName()].state;
-   state->print();
    CardSpots boardSpots = state->board.getOccupiedSpots();
    for (size_t i = 0; i <= card->curLevel; ++i)
    {

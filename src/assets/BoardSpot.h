@@ -24,6 +24,7 @@ struct Spot
       SingleDraw,
       Card
    };
+   static std::string toString(Type);
 };
 typedef Spot::Type SpotType;
 
@@ -49,6 +50,8 @@ public:
    void executeEndOfRound();
    void reset();
    void releaseCard();
+
+   void print();
 
    SpotType type;
    bool occupied;

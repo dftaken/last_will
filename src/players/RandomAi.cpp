@@ -183,6 +183,7 @@ Plan::Ptr RandomAi::getPlan()
 
 BoardSpot::Ptr RandomAi::pickErrand()
 {
+   printf("\n%s::pickErrand()\n",getName().c_str());
    BoardSpots avail = gameboard->getAvailableErrands(this);
    size_t ndx = SysUtils::getRandL() % avail.size();
    return avail.at(ndx);
@@ -248,6 +249,8 @@ Effects RandomAi::getAllExpenseEffects(CardTypeType type)
 
 void RandomAi::executeActions()
 {
+   printf("\n--- %s::executeActions() START\n",getName().c_str());
+   myState->print();
    Actions options = gameboard->getAvailableActions(this);
    for (Actions::iterator itr = options.begin(); itr != options.end();)
    {
@@ -259,10 +262,11 @@ void RandomAi::executeActions()
 
    while (options.size() > 0)
    {
-      myState->print();
+      printf("options:\n");
+      options.print();
+
       size_t ndx = SysUtils::getRandL() % options.size();
-      printf("%s choosing action:\n",getName().c_str());
-      options[ndx].print();
+      printf("%s choosing action: %lu\n",getName().c_str(),ndx);
       if (!gameboard->processAction(this,options[ndx]))
       {
          throw std::runtime_error(
@@ -279,7 +283,9 @@ void RandomAi::executeActions()
          else
             ++itr;
       }
+      myState->print();
    }
+   printf("--- %s::executeActions() END\n",getName().c_str());
 }
 
 void RandomAi::print()

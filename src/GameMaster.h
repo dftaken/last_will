@@ -14,6 +14,16 @@
 // Players
 #include <players/PlayerInterface.h>
 
+#include <pthread.h>
+
+class GameMaster;
+
+struct ThreadData
+{
+   GameMaster *gm;
+   long unsigned int numGames;
+};
+
 class GameMaster
 {
 public:
@@ -22,11 +32,16 @@ public:
 
    void run(int, char**);
 
+   void executeGame();
+
 protected:
    void processCmdLine(int,char**);
+   void kickOffThread();
 
    GameBoard::Ptr gameboard;
    Players players;
+   pthread_t tid;
+   ThreadData data;
 
    void planningPhase();
    void errandsPhase();

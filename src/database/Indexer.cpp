@@ -5,7 +5,7 @@
  *      Author: milites
  */
 
-#include <Indexer.h>
+#include <database/Indexer.h>
 #include <stdexcept>
 
 /* Round Permutations

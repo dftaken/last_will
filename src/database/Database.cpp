@@ -5,8 +5,8 @@
  *      Author: milites
  */
 
-#include <Database.h>
-#include <Indexer.h>
+#include <database/Database.h>
+#include <database/Indexer.h>
 
 #include <stdio.h>
 #include <sys/mman.h>
@@ -104,4 +104,12 @@ void Database::recordAction(bool wl, int round, Action action)
       actions[ndx].w++;
    else
       actions[ndx].l++;
+}
+
+ActionRecord* Database::getActions()
+{
+   if (actions == NULL && !loadDatabase("action_database.db"))
+      throw std::runtime_error("Do not have a database loaded.");
+
+   return actions;
 }

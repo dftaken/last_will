@@ -10,8 +10,9 @@
 #include <Logging.h>
 #include <Logger.h>
 #include <string.h>
-#include <Indexer.h>
-#include <Database.h>
+#include <database/Indexer.h>
+#include <database/Database.h>
+#include <unistd.h>
 
 // Gameboards
 #include <gameboards/GameBoard.h>
@@ -19,9 +20,43 @@
 // Players
 #include <players/RandomAi.h>
 
+static char threadSignal = 0;
+static char threadFinished = 0;
+#define GAME_PRINT_INCREMENT 100;
+void* execute_thread(void *arg)
+{
+   ThreadData *data = (ThreadData*)arg;
+   long unsigned int count = 0;
+   long unsigned int lastPost = 0;
+
+   while (count < data->numGames)
+   {
+      if (threadSignal == 1)
+      {
+         data->gm->executeGame();
+         count++;
+         long unsigned int tmp = count / GAME_PRINT_INCREMENT;
+         if (tmp != lastPost)
+         {
+            fprintf(stderr,"Games Completed: %lu\n",count);
+            lastPost = tmp;
+         }
+      }
+      else if (threadSignal == 0)
+      {
+         count = data->numGames;
+      }
+   }
+
+   threadFinished = 1;
+   return NULL;
+}
+
 GameMaster::GameMaster() :
    gameboard(NULL),
-   players()
+   players(),
+   tid(),
+   data()
 {
    // Intentionally left blank
 }
@@ -40,6 +75,9 @@ GameMaster::~GameMaster()
 
 void GameMaster::run(int argc, char **argv)
 {
+   data.gm = this;
+   data.numGames = -1;
+
    processCmdLine(argc,argv);
 
    gameboard = new GameBoard();
@@ -54,73 +92,127 @@ void GameMaster::run(int argc, char **argv)
       (*itr)->setBoard(gameboard);
    }
 
-   for (int i = 0; i < 10; ++i)
+   threadSignal = 2;
+   kickOffThread();
+
+   bool keepRunning = true;
+   bool printHeader = true;
+   while (keepRunning && !threadFinished)
    {
-      printf("\n\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-      printf("~~~ STARTING GAME #%d ~~~\n",i+1);
-      printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-
-      printf("Initializing gameboard\n");
-      gameboard->initialize();
-
-      printf("Starting game\n");
-      while (gameboard->getNumRoundsRemaining() > 0)
+      if (printHeader)
       {
-         printf("Starting round = %u\n",gameboard->round);
-
-         // Setup Phase
-         printf("~~~ Phase: Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-         gameboard->executeSetup();
-         gameboard->printState();
-         printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-
-         // Planning Phase
-         printf("~~~ Phase: Planning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-         planningPhase();
-         printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-
-         // Errands Phase
-         printf("~~~ Phase: Errands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-         errandsPhase();
-         printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-
-         // Actions Phase
-         printf("~~~ Phase: Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-         actionsPhase();
-         printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
-
-         // End of Round Phase
-         printf("~~~ Phase: End of Round ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
-         gameboard->executeEndOfRound();
-         printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+         fprintf(stderr,"Queued Games: %lu\n",data.numGames);
+         fprintf(stderr,"Options:\n");
+         fprintf(stderr,"   s - Start\n");
+         fprintf(stderr,"   p - Pause\n");
+         fprintf(stderr,"   q - Quit\n");
+         printHeader = false;
       }
-
-      printf("All done\n");
-      printf("Final Scores:\n");
-      for (Players::iterator itr = players.begin(); itr != players.end(); ++itr)
+      char input = 0;
+      scanf("%c",&input);
+      switch (input)
       {
-         std::string name = (*itr)->getName().c_str();
-         printf("%s: $%d\n",name.c_str(),gameboard->players[name].state->resources[Resource::Money]);
+         case '\n':
+            printHeader = true;
+            break;
+         case 's':
+         case 'S':
+            fprintf(stderr,"Starting Thread\n");
+            threadSignal = 1;
+            break;
+         case 'p':
+         case 'P':
+            threadSignal = 2;
+            fprintf(stderr,"Pausing Thread\n");
+            break;
+         case 'q':
+         case 'Q':
+         default:
+            threadSignal = 0;
+            keepRunning = false;
+            fprintf(stderr,"Quiting\n");
+            break;
       }
-      printf("Player %s won!\n",gameboard->lastWinner->getName().c_str());
-
-      for (size_t ndx = 0; ndx < gameboard->actionCache.size(); ++ndx)
-      {
-         bool won = gameboard->actionCache[ndx].player == gameboard->lastWinner;
-         Logger::instance().recordAction(
-            won,
-            gameboard->actionCache[ndx].player->getName(),
-            gameboard->actionCache[ndx].round,
-            gameboard->actionCache[ndx].action);
-         Database::instance().recordAction(
-            won,
-            gameboard->actionCache[ndx].round,
-            gameboard->actionCache[ndx].action);
-      }
-      fprintf(stderr,"Finished game %d\n",i);
    }
 
+   fprintf(stderr,"Waiting for thread to return\n");
+   if (pthread_join(tid,NULL) != 0)
+   {
+      throw std::runtime_error("Failed to join thread.");
+   }
+
+//   for (int i = 0; i < 10; ++i)
+//   {
+//      executeGame();
+//   }
+
    fprintf(stderr,"Number of action permutations = %lu\n",Indexer::getNumActions());
+}
+
+void GameMaster::executeGame()
+{
+   printf("\n\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+   printf("~~~ STARTING GAME #%d ~~~\n",i+1);
+   printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+
+   printf("Initializing gameboard\n");
+   gameboard->initialize();
+
+   printf("Starting game\n");
+   while (gameboard->getNumRoundsRemaining() > 0)
+   {
+      printf("Starting round = %u\n",gameboard->round);
+
+      // Setup Phase
+      printf("~~~ Phase: Setup ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+      gameboard->executeSetup();
+      gameboard->printState();
+      printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+
+      // Planning Phase
+      printf("~~~ Phase: Planning ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+      planningPhase();
+      printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+
+      // Errands Phase
+      printf("~~~ Phase: Errands ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+      errandsPhase();
+      printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+
+      // Actions Phase
+      printf("~~~ Phase: Actions ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+      actionsPhase();
+      printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+
+      // End of Round Phase
+      printf("~~~ Phase: End of Round ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+      gameboard->executeEndOfRound();
+      printf("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n\n");
+   }
+
+   printf("All done\n");
+   printf("Final Scores:\n");
+   for (Players::iterator itr = players.begin(); itr != players.end(); ++itr)
+   {
+      std::string name = (*itr)->getName().c_str();
+      printf("%s: $%d\n",name.c_str(),gameboard->players[name].state->resources[Resource::Money]);
+   }
+   printf("Player %s won!\n",gameboard->lastWinner->getName().c_str());
+
+   for (size_t ndx = 0; ndx < gameboard->actionCache.size(); ++ndx)
+   {
+      bool won = gameboard->actionCache[ndx].player == gameboard->lastWinner;
+      Logger::instance().recordAction(
+         won,
+         gameboard->actionCache[ndx].player->getName(),
+         gameboard->actionCache[ndx].round,
+         gameboard->actionCache[ndx].action);
+      Database::instance().recordAction(
+         won,
+         gameboard->actionCache[ndx].round,
+         gameboard->actionCache[ndx].action);
+   }
+   printf(stderr,"Finished game %d\n",i);
 }
 
 void GameMaster::processCmdLine(int argc, char **argv)
@@ -144,6 +236,19 @@ void GameMaster::processCmdLine(int argc, char **argv)
          }
       }
    }
+}
+
+void GameMaster::kickOffThread()
+{
+   pthread_attr_t attr;
+   if (pthread_attr_init(&attr) != 0)
+      throw std::runtime_error("Failed to initialize pthread attributes.");
+
+   if (pthread_create(&tid,&attr,&execute_thread,&data) != 0)
+      throw std::runtime_error("Failed to create thread.");
+
+   if (pthread_attr_destroy(&attr) != 0)
+      throw std::runtime_error("Failed to destroy thread attributes.");
 }
 
 void GameMaster::planningPhase()

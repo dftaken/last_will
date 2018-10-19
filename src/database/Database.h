@@ -25,6 +25,7 @@ public:
 
    bool loadDatabase(char*);
    void recordAction(bool,int,Action);
+   ActionRecord *getActions();
 
 private:
    Database();

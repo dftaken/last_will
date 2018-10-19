@@ -927,7 +927,25 @@ void GameBoard::addEventActionPermutations(GamePlayer::Ptr player,Card::Ptr card
          action.cost[Resource::Money] = baseCost + mods[0] + mods[1];
          actions.push_back(action);
       }
-      else if (mods.size() > 2)
+      else if (mods.size() == 3)
+      {
+         int baseCost = action.cost[Resource::Money];
+         action.cost[Resource::Money] = baseCost + mods[0];
+         actions.push_back(action);
+         action.cost[Resource::Money] = baseCost + mods[1];
+         actions.push_back(action);
+         action.cost[Resource::Money] = baseCost + mods[2];
+         actions.push_back(action);
+         action.cost[Resource::Money] = baseCost + mods[0] + mods[1];
+         actions.push_back(action);
+         action.cost[Resource::Money] = baseCost + mods[0] + mods[2];
+         actions.push_back(action);
+         action.cost[Resource::Money] = baseCost + mods[1] + mods[2];
+         actions.push_back(action);
+         action.cost[Resource::Money] = baseCost + mods[0] + mods[1] + mods[2];
+         actions.push_back(action);
+      }
+      else if (mods.size() > 3)
       {
          throw std::runtime_error(
             "GameBoard isn't handling all effect permutations on action.");

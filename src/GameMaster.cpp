@@ -10,6 +10,8 @@
 #include <Logging.h>
 #include <Logger.h>
 #include <string.h>
+#include <Indexer.h>
+#include <Database.h>
 
 // Gameboards
 #include <gameboards/GameBoard.h>
@@ -52,7 +54,7 @@ void GameMaster::run(int argc, char **argv)
       (*itr)->setBoard(gameboard);
    }
 
-   for (int i = 0; i < 1000; ++i)
+   for (int i = 0; i < 10; ++i)
    {
       printf("\n\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
       printf("~~~ STARTING GAME #%d ~~~\n",i+1);
@@ -110,9 +112,15 @@ void GameMaster::run(int argc, char **argv)
             gameboard->actionCache[ndx].player->getName(),
             gameboard->actionCache[ndx].round,
             gameboard->actionCache[ndx].action);
+         Database::instance().recordAction(
+            won,
+            gameboard->actionCache[ndx].round,
+            gameboard->actionCache[ndx].action);
       }
       fprintf(stderr,"Finished game %d\n",i);
    }
+
+   fprintf(stderr,"Number of action permutations = %lu\n",Indexer::getNumActions());
 }
 
 void GameMaster::processCmdLine(int argc, char **argv)
@@ -125,6 +133,14 @@ void GameMaster::processCmdLine(int argc, char **argv)
          {
             fprintf(stderr,"Failed to open output file \"%s\"\n",argv[i+1]);
             throw std::runtime_error("Failed to open output file.");
+         }
+      }
+      else if (strcmp(argv[i],"-db")==0 && (i+1) < argc)
+      {
+         if (!Database::instance().loadDatabase(argv[i+1]))
+         {
+            fprintf(stderr,"Failed to open database file \"%s\"\n",argv[i+1]);
+            throw std::runtime_error("Failed to open database file.");
          }
       }
    }

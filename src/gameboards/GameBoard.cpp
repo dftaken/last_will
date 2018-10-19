@@ -1045,8 +1045,9 @@ void GameBoard::addUpgradePermutations(GamePlayer::Ptr player, Actions &actions)
          Action action(ActionType::Upgrade);
          action.card = card;
          action.cost[Resource::Action] = 1;
-         action.cost[card->upgradeLevels[nextUpgrade].cost] =
-            card->upgradeLevels[nextUpgrade].expense;
+//         action.cost[card->upgradeLevels[nextUpgrade].cost] =
+//            card->upgradeLevels[nextUpgrade].expense;
+         action.cost[card->upgradeLevels[nextUpgrade].cost] = 1;
          actions.push_back(action);
       }
    }

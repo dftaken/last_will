@@ -5,7 +5,9 @@ include $(MAKE_VARS)
 SOURCE_FILES = \
    main.cpp \
    GameMaster.cpp \
-   Logger.cpp
+   Logger.cpp \
+   Indexer.cpp \
+   Database.cpp
    
 LIBS = \
    -lAssets \

@@ -53,6 +53,7 @@ bool Logger::openOutputFile(char *fname)
 }
 
 void Logger::recordAction(
+   long unsigned int game,
    bool won,
    std::string name,
    int round,
@@ -60,6 +61,9 @@ void Logger::recordAction(
 {
    if (output == NULL)
       openOutputFile("last_will.out");
+
+   // Game id
+   fprintf(output,"%lu,",game);
 
    // Win/Loss
    if (won)
@@ -83,28 +87,6 @@ void Logger::recordAction(
    for (int i = Resource::Money; i <= Resource::ActionAnd2Money; ++i)
       fprintf(output,",%d",action.cost[ResourceType(i)]);
 
-   // Win/Loss
-   if (won)
-      fprintf(output,",1,");
-   else
-      fprintf(output,",0,");
-
-   // Player Name, Round, Action Type
-   fprintf(output,"%s,%d,%d,",
-           name.c_str(),
-           round,
-           action.type);
-
-   // Card Id
-   if (action.card != NULL)
-      fprintf(output,"%d",action.card->id);
-   else
-      fprintf(output,"%d",CardId::Invalid);
-
-   // Card Resources
-   for (int i = Resource::Money; i <= Resource::ActionAnd2Money; ++i)
-      fprintf(output,",%d",action.cost[ResourceType(i)]);
-
    fprintf(output,"\n");
 }
 
@@ -113,11 +95,8 @@ void Logger::writeOutputHeader()
    // Print the Enumerations
 
    // Print the column headers
-   fprintf(output,"W/L,PlayerName,Round#,Type,CardId,");
+   fprintf(output,"GameId,W/L,PlayerName,Round#,Type,CardId,");
    for (int i = Resource::Money; i <= Resource::ActionAnd2Money; ++i)
       fprintf(output,"%s,",Resource::toString(ResourceType(i)).c_str());
-   fprintf(output,"W/L,PlayerName,Round#,Type,CardId");
-   for (int i = Resource::Money; i <= Resource::ActionAnd2Money; ++i)
-      fprintf(output,",%s",Resource::toString(ResourceType(i)).c_str());
    fprintf(output,"\n");
 }

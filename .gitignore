@@ -2,3 +2,4 @@
 linux_x86_64/*
 core
 *.db
+*.txt

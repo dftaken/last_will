@@ -21,7 +21,7 @@ public:
 
    bool openOutputFile(char*);
 
-   void recordAction(bool, std::string, int, Action);
+   void recordAction(long unsigned int, bool, std::string, int, Action);
 
 protected:
    Logger();

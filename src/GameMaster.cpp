@@ -33,7 +33,7 @@ void* execute_thread(void *arg)
    {
       if (threadSignal == 1)
       {
-         data->gm->executeGame();
+         data->gm->executeGame(count+1);
          count++;
          long unsigned int tmp = count / GAME_PRINT_INCREMENT;
          if (tmp != lastPost)
@@ -149,7 +149,7 @@ void GameMaster::run(int argc, char **argv)
    fprintf(stderr,"Number of action permutations = %lu\n",Indexer::getNumActions());
 }
 
-void GameMaster::executeGame()
+void GameMaster::executeGame(long unsigned int gameId)
 {
    printf("\n\n\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
    printf("~~~ STARTING GAME #%d ~~~\n",i+1);
@@ -203,6 +203,7 @@ void GameMaster::executeGame()
    {
       bool won = gameboard->actionCache[ndx].player == gameboard->lastWinner;
       Logger::instance().recordAction(
+         gameId,
          won,
          gameboard->actionCache[ndx].player->getName(),
          gameboard->actionCache[ndx].round,

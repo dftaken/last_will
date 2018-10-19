@@ -32,7 +32,7 @@ public:
 
    void run(int, char**);
 
-   void executeGame();
+   void executeGame(long unsigned int);
 
 protected:
    void processCmdLine(int,char**);

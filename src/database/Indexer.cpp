@@ -271,3 +271,32 @@ void Indexer::convertActionNdx(
          break;
    }
 }
+
+Indexes Indexer::getCardNdxs(int cardId)
+{
+   Indexes ndxs;
+   for (size_t r = 0; r < roundCount; ++r)
+   {
+      for (size_t t = 0; t < actionTypeCount; ++t)
+      {
+         for (size_t m = 0; m < moneyCount; ++m)
+         {
+            for (size_t a = 0; a < actionCount; ++a)
+            {
+               for (size_t c = 0; c < companionCount; ++c)
+               {
+                  size_t ndx =
+                     r * roundMod +
+                     t * actionTypeMod +
+                     cardId * cardIdMod +
+                     m * moneyMod +
+                     a * actionMod +
+                     c * companionMod;
+                  ndxs.push_back(ndx);
+               }
+            }
+         }
+      }
+   }
+   return ndxs;
+}

@@ -11,6 +11,9 @@
 #include <stddef.h>
 #include <assets/Action.h>
 #include <assets/cards/CardAttributes.h>
+#include <vector>
+
+typedef std::vector<size_t> Indexes;
 
 class Indexer
 {
@@ -37,6 +40,7 @@ public:
       int &dogCost,
       int &chefCost,
       int &guestCost);
+   static Indexes getCardNdxs(int cardId);
 
 private:
    // Action Index Permutation Counts

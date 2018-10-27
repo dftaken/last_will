@@ -31,6 +31,33 @@ struct ActionData
    int round;
    Action action;
 };
+typedef std::vector<ActionData> ActionDataSet;
+
+struct PlanData
+{
+   GamePlayer::Ptr player;
+   int round;
+   Plan::Ptr plan;
+   Cards cardsDrawn;
+};
+typedef std::vector<PlanData> PlanDataSet;
+
+struct ErrandData
+{
+   GamePlayer::Ptr player;
+   int round;
+   SpotType type;
+   Card::Ptr card;
+};
+typedef std::vector<ErrandData> ErrandDataSet;
+
+struct StatData
+{
+   std::string winner;
+   int startingMoney;
+   std::map<std::string,int> endingMoney;
+};
+typedef std::vector<StatData> StatDataSet;
 
 class GameBoard : public GameBoardInterface
 {
@@ -137,7 +164,10 @@ public:
    void printState();
 
    // Logging Data
-   std::vector<ActionData> actionCache;
+   ActionDataSet actionCache;
+   PlanDataSet planCache;
+   ErrandDataSet errandCache;
+   StatData gameStats;
    GamePlayer::Ptr lastWinner;
 };
 

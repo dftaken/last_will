@@ -113,3 +113,21 @@ ActionRecord* Database::getActions()
 
    return actions;
 }
+
+float Database::computeScore(ActionRecord &record)
+{
+   float score = 0.0f;
+   if (record.w != 0 || record.l != 0)
+   {
+      if (record.w >= record.l)
+      {
+         score = ((float)(record.w - record.l)) / (float)(record.w + record.l);
+      }
+      else
+      {
+         score = ((float)(record.l - record.w)) / (float)(record.w + record.l);
+         score *= -1.0f;
+      }
+   }
+   return score;
+}

@@ -5,7 +5,8 @@ include $(MAKE_VARS)
 NAME = libPlayers.so
 
 SOURCE_FILES = \
-   RandomAi.cpp
+   RandomAi.cpp \
+   LearningAi.cpp
    
 LIBS = \
    -lCards \

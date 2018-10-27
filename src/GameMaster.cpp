@@ -13,24 +13,28 @@
 #include <database/Indexer.h>
 #include <database/Database.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <system_utils/SysUtils.h>
 
 // Gameboards
 #include <gameboards/GameBoard.h>
 
 // Players
 #include <players/RandomAi.h>
+#include <players/LearningAi.h>
 
 void testIndexer();
 
 static char threadSignal = 0;
 static char threadFinished = 0;
-#define GAME_PRINT_INCREMENT 100;
+#define GAME_PRINT_INCREMENT 1;
 void* execute_thread(void *arg)
 {
    ThreadData *data = (ThreadData*)arg;
    long unsigned int count = 0;
    long unsigned int lastPost = 0;
 
+   double start = SysUtils::getSecTime();
    while (count < data->numGames)
    {
       if (threadSignal == 1)
@@ -49,6 +53,10 @@ void* execute_thread(void *arg)
          count = data->numGames;
       }
    }
+   double end = SysUtils::getSecTime();
+   double avg = (end - start) / (double)count;
+   fprintf(stderr,"Completed %lu games in %f sec\n",count,(end-start));
+   fprintf(stderr,"Avg time per game = %f sec\n",avg);
 
    threadFinished = 1;
    return NULL;
@@ -86,6 +94,7 @@ void GameMaster::run(int argc, char **argv)
    players.push_back(new RandomAi("AI_1"));
    players.push_back(new RandomAi("AI_2"));
    players.push_back(new RandomAi("AI_3"));
+//   players.push_back(new LearningAi("SMARTY"));
 
    printf("Registering players\n");
    for (Players::iterator itr = players.begin(); itr != players.end(); ++itr)
@@ -143,7 +152,7 @@ void GameMaster::run(int argc, char **argv)
       throw std::runtime_error("Failed to join thread.");
    }
 
-   testIndexer();
+//   testIndexer();
 
    fprintf(stderr,"Number of action permutations = %lu\n",Indexer::getNumActions());
 }
@@ -198,20 +207,7 @@ void GameMaster::executeGame(long unsigned int gameId)
    }
    printf("Player %s won!\n",gameboard->lastWinner->getName().c_str());
 
-   for (size_t ndx = 0; ndx < gameboard->actionCache.size(); ++ndx)
-   {
-      bool won = gameboard->actionCache[ndx].player == gameboard->lastWinner;
-      Logger::instance().recordAction(
-         gameId,
-         won,
-         gameboard->actionCache[ndx].player->getName(),
-         gameboard->actionCache[ndx].round,
-         gameboard->actionCache[ndx].action);
-      Database::instance().recordAction(
-         won,
-         gameboard->actionCache[ndx].round,
-         gameboard->actionCache[ndx].action);
-   }
+   recordGameboardCaches(gameId);
    printf("Finished game %lu\n",gameId);
 }
 
@@ -219,12 +215,25 @@ void GameMaster::processCmdLine(int argc, char **argv)
 {
    for (int i = 0; i < argc; ++i)
    {
-      if (strcmp(argv[i],"-o")==0 && (i+1) < argc)
+      if (strcmp(argv[i],"-h")==0 || strcmp(argv[i],"--help")==0)
       {
-         if (!Logger::instance().openOutputFile(argv[i+1]))
+         printHelpMessage();
+         exit(0);
+      }
+      else if (strcmp(argv[i],"-ao")==0 && (i+1) < argc)
+      {
+         if (!Logger::instance().openActionFile(argv[i+1]))
          {
-            fprintf(stderr,"Failed to open output file \"%s\"\n",argv[i+1]);
-            throw std::runtime_error("Failed to open output file.");
+            fprintf(stderr,"Failed to open output action file \"%s\"\n",argv[i+1]);
+            throw std::runtime_error("Failed to open output action file.");
+         }
+      }
+      else if (strcmp(argv[i],"-po")==0 && (i+1) < argc)
+      {
+         if (!Logger::instance().openPlanFile(argv[i+1]))
+         {
+            fprintf(stderr,"Failed to open output plan file \"%s\"\n",argv[i+1]);
+            throw std::runtime_error("Failed to open output plan file.");
          }
       }
       else if (strcmp(argv[i],"-db")==0 && (i+1) < argc)
@@ -278,6 +287,11 @@ void GameMaster::planningPhase()
       Plan::Ptr plan = (*itr)->pickPlan();
       if (plan != NULL && plan->location == NULL)
       {
+         PlanData record;
+         record.player = (*itr);
+         record.round = gameboard->round;
+         record.plan = plan;
+
          (*itr)->takePlan(plan);
          grantPlayerResources((*itr),plan);
          CardDeckTypes choices = (*itr)->chooseCardDraws(plan->cards);
@@ -285,8 +299,11 @@ void GameMaster::planningPhase()
          {
             for (size_t i = 0; i < choices.size(); ++i)
             {
-               givePlayerCard((*itr),gameboard->decks[choices.at(i)]->draw());
+               Card::Ptr card = gameboard->decks[choices.at(i)]->draw();
+               record.cardsDrawn.push_back(card);
+               givePlayerCard((*itr),card);
             }
+            gameboard->planCache.push_back(record);
          }
          else
          {
@@ -496,6 +513,14 @@ void GameMaster::processErrand(PlayerInterface::Ptr player, BoardSpot::Ptr erran
 {
    printf("%s picked errand:\n",player->getName().c_str());
    errand->print();
+
+   ErrandData record;
+   record.player = player;
+   record.round = gameboard->round;
+   record.type = errand->type;
+   record.card = errand->card;
+   gameboard->errandCache.push_back(record);
+
    switch (errand->type)
    {
       case Spot::PropertyMarket:
@@ -730,4 +755,65 @@ void testIndexer()
       }
    }
    fprintf(stderr,"Indexer seems to convert fine\n");
+}
+
+void GameMaster::printHelpMessage()
+{
+   fprintf(stderr,"Options:\n");
+   fprintf(stderr,"   -n <number>\n      Number of games to complete before returning.\n      Defaults to (unsigned int) -1.\n");
+   fprintf(stderr,"   -ao <file>\n      CSV/Text output file for action recordings.\n      Defaults to \"lw_actions.out\"\n");
+   fprintf(stderr,"   -po <file>\n      CSV/Text output file for plan recordings.\n      Defaults to \"lw_plans.out\"\n");
+   fprintf(stderr,"   -db <file>\n      File to use as action database. Defaults to\n      \"action_database.db\"\n");
+}
+
+void GameMaster::recordGameboardCaches(long unsigned int gameId)
+{
+   // Record Action Stats
+   for (size_t ndx = 0; ndx < gameboard->actionCache.size(); ++ndx)
+   {
+      bool won = gameboard->actionCache[ndx].player == gameboard->lastWinner;
+      Logger::instance().recordAction(
+         gameId,
+         won,
+         gameboard->actionCache[ndx].player->getName(),
+         gameboard->actionCache[ndx].round,
+         gameboard->actionCache[ndx].action);
+      Database::instance().recordAction(
+         won,
+         gameboard->actionCache[ndx].round,
+         gameboard->actionCache[ndx].action);
+   }
+
+   // Record Plan Stats
+   for (PlanDataSet::iterator itr = gameboard->planCache.begin(); itr != gameboard->planCache.end(); ++itr)
+   {
+      bool won = itr->player == gameboard->lastWinner;
+      Logger::instance().recordPlan(
+         gameId,
+         won,
+         itr->player->getName(),
+         itr->round,
+         itr->plan,
+         itr->cardsDrawn);
+   }
+
+   // Record Errand Stats
+   for (ErrandDataSet::iterator itr = gameboard->errandCache.begin(); itr != gameboard->errandCache.end(); ++itr)
+   {
+      bool won = itr->player == gameboard->lastWinner;
+      Logger::instance().recordErrand(
+         gameId,
+         won,
+         itr->player->getName(),
+         itr->round,
+         itr->type,
+         itr->card);
+   }
+
+   // Record Game Stats
+   Logger::instance().recordStats(
+      gameId,
+      gameboard->gameStats.startingMoney,
+      gameboard->gameStats.winner,
+      gameboard->gameStats.endingMoney);
 }

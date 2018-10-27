@@ -1,4 +1,5 @@
 *.out
+*.csv
 linux_x86_64/*
 core
 *.db

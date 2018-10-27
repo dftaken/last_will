@@ -54,6 +54,9 @@ protected:
    void processErrand(PlayerInterface::Ptr,BoardSpot::Ptr);
    bool validatePropertyAdjustments(PropertyAdjustments);
    bool validatePlayerEffects(PlayerInterface::Ptr,Effects);
+
+   void printHelpMessage();
+   void recordGameboardCaches(long unsigned int);
 };
 
 #endif /* GAMEMASTER_H_ */

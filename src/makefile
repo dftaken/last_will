@@ -13,7 +13,8 @@ LIBS = \
    -lGameBoards \
    -lPlayers \
    -lDatabase \
-   -lpthread
+   -lpthread \
+   -lSysUtils
 
 Assets:
 	echo "Building assets"

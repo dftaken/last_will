@@ -284,6 +284,10 @@ PlayerState::Ptr GameBoard::registerPlayer(GamePlayer::Ptr player)
 
 void GameBoard::initialize()
 {
+   gameStats.winner.clear();
+   gameStats.startingMoney = 0;
+   gameStats.endingMoney.clear();
+
    // Check to make sure we have a valid number of players
    getNumPlayers();
 
@@ -310,8 +314,10 @@ void GameBoard::initialize()
    initOperaSpot();
    initCardSpots();
 
-   // Clear action cache
+   // Clear caches
    actionCache.clear();
+   planCache.clear();
+   errandCache.clear();
 
    // Clear last winner
    lastWinner = NULL;
@@ -494,6 +500,14 @@ void GameBoard::executeEndOfRound()
       }
 
       lastWinner = winner->player;
+      gameStats.winner = lastWinner->getName();
+      for (PlayerStates::iterator itr = players.begin(); itr != players.end(); ++itr)
+      {
+         if (itr->second.state->resources.find(Resource::Money) != itr->second.state->resources.end())
+            gameStats.endingMoney[itr->first] = itr->second.state->resources[Resource::Money];
+         else
+            throw std::runtime_error("A player has ended the game without a money resource pool\n");
+      }
    }
 }
 
@@ -504,6 +518,7 @@ void GameBoard::initPlayers()
 {
    Card::Ptr card = decks[CardDeck::LastWill]->draw();
    int startingMoney = card->valueLevels[0].value;
+   gameStats.startingMoney = startingMoney;
    for (PlayerStates::iterator itr = players.begin(); itr != players.end(); ++itr)
    {
       itr->second.state->reset();

@@ -35,3 +35,4 @@ Database:
 all: Assets GameBoards Players Database
 	g++ $(COMP_FLAGS) -I. -I$(DEV_ROOT) $(SOURCE_FILES) $(LIB_DIRS) $(LIBS) -o $(BLD_DIR)/$(OUT_NAME)
 	g++ $(COMP_FLAGS) -I. -I$(DEV_ROOT) Analyzer.cpp $(LIB_DIRS) -lDatabase -o $(BLD_DIR)/lw_analyzer
+	g++ $(COMP_FLAGS) -I. -I$(DEV_ROOT) CardAnalysis.cpp $(LIB_DIRS) -lCards -o $(BLD_DIR)/lw_card_analysis

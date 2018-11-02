@@ -178,6 +178,7 @@ struct CardDeck
       NumDeckTypes
    };
    static std::vector<Type> Drawable;
+   static std::string toString(Type);
 };
 typedef CardDeck::Type CardDeckType;
 typedef std::vector<CardDeckType> CardDeckTypes;
@@ -193,6 +194,7 @@ struct CardGroup
       Companion,
       Other
    };
+   static std::string toString(Type);
 };
 typedef CardGroup::Type CardGroupType;
 
@@ -220,6 +222,7 @@ struct CardType
       WildCard,
       LastWill
    };
+   static std::string toString(Type);
 };
 typedef CardType::Type CardTypeType;
 
@@ -262,6 +265,7 @@ struct CardName
       WildCard,
       StartMoney
    };
+   static std::string toString(Type);
 };
 typedef CardName::Type CardNameType;
 

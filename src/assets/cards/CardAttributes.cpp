@@ -441,6 +441,193 @@ std::string CardId::toString(CardIdType id)
    return "SOME SHIT IS BROKE!";
 }
 
+std::string CardDeck::toString(CardDeckType type)
+{
+   switch (type)
+   {
+      case Invalid:
+         return "Invalid";
+         break;
+      case Events:
+         return "Events";
+         break;
+      case Properties:
+         return "Properties";
+         break;
+      case HelpersExpenses:
+         return "HelpersExpenses";
+         break;
+      case Companions:
+         return "Companions";
+         break;
+      case Special:
+         return "Special";
+         break;
+      case WildCards:
+         return "WildCards";
+         break;
+      case LastWill:
+         return "LastWill";
+         break;
+      case NumDeckTypes:
+         return "NumDeckTypes";
+         break;
+      default:
+         return "UNRECOGNIZED";
+         break;
+   }
+}
+
+std::string CardGroup::toString(CardGroupType type)
+{
+   switch (type)
+   {
+      case Invalid:
+         return "Invalid";
+         break;
+      case Event:
+         return "Event";
+         break;
+      case Property:
+         return "Property";
+         break;
+      case HelperExpense:
+         return "HelperExpense";
+         break;
+      case Companion:
+         return "Companion";
+         break;
+      case Other:
+         return "Other";
+         break;
+      default:
+         return "UNRECOGNIZED";
+         break;
+   }
+}
+
+std::string CardType::toString(CardTypeType type)
+{
+   switch (type)
+   {
+      case Invalid:
+         return "Invalid";
+      case None:
+         return "None";
+      case Horse:
+         return "Horse";
+      case Dog:
+         return "Dog";
+      case Chef:
+         return "Chef";
+      case Guest:
+         return "Guest";
+      case Farm:
+         return "Farm";
+      case TownHouse:
+         return "TownHouse";
+      case ManorHouse:
+         return "ManorHouse";
+      case Mansion:
+         return "Mansion";
+      case Carriage:
+         return "Carriage";
+      case Theatre:
+         return "Theatre";
+      case BoatTrip:
+         return "BoatTrip";
+      case Party:
+         return "Party";
+      case Dinner:
+         return "Dinner";
+      case Helper:
+         return "Helper";
+      case TrainingGround:
+         return "TrainingGround";
+      case WildCard:
+         return "WildCard";
+      case LastWill:
+         return "LastWill";
+      default:
+         return "UNRECOGNIZED";
+   }
+}
+
+std::string CardName::toString(CardNameType type)
+{
+   switch (type)
+   {
+      case Invalid:
+         return "Invalid";
+      case Horse:
+         return "Horse";
+      case Dog:
+         return "Dog";
+      case Chef:
+         return "Chef";
+      case Guest:
+         return "Guest";
+      case Farm:
+         return "Farm";
+      case TownHouse:
+         return "TownHouse";
+      case ManorHouse:
+         return "ManorHouse";
+      case Mansion:
+         return "Mansion";
+      case CarriageRide:
+         return "CarriageRide";
+      case Theatre:
+         return "Theatre";
+      case BoatTrip:
+         return "BoatTrip";
+      case Soiree:
+         return "Soiree";
+      case Ball:
+         return "Ball";
+      case Dinner:
+         return "Dinner";
+      case GentlemensClub:
+         return "GentlemensClub";
+      case Reservation:
+         return "Reservation";
+      case Carriage:
+         return "Carriage";
+      case TrainingGround:
+         return "TrainingGround";
+      case SeaDog:
+         return "SeaDog";
+      case Gardener:
+         return "Gardener";
+      case Valet:
+         return "Valet";
+      case EstateAgent:
+         return "EstateAgent";
+      case Waiter:
+         return "Waiter";
+      case SchoolChum:
+         return "SchoolChum";
+      case Tailor:
+         return "Tailor";
+      case Coachman:
+         return "Coachman";
+      case BreedersFair:
+         return "BreedersFair";
+      case WildParty:
+         return "WildParty";
+      case HecticDay:
+         return "HecticDay";
+      case OldFriend:
+         return "OldFriend";
+      case WildCard:
+         return "WildCard";
+      case StartMoney:
+         return "StartMoney";
+      default:
+         return "UNRECOGNIZED";
+   }
+}
+
 std::string Effect::toString(EffectType type)
 {
    switch (type)

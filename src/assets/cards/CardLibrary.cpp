@@ -56,9 +56,9 @@ CardLibrary::CardLibrary() :
    addProperty(CardId::Farm_10,CardName::Farm,"Farm");
    addProperty(CardId::Farm_11,CardName::Farm,"Farm");
    addProperty(CardId::TownHouse_1,CardName::TownHouse,"TownHouse");
-   addProperty(CardId::TownHouse_2,CardName::Farm,"Farm");
-   addProperty(CardId::TownHouse_3,CardName::Farm,"Farm");
-   addProperty(CardId::TownHouse_4,CardName::Farm,"Farm");
+   addProperty(CardId::TownHouse_2,CardName::TownHouse,"TownHouse");
+   addProperty(CardId::TownHouse_3,CardName::TownHouse,"TownHouse");
+   addProperty(CardId::TownHouse_4,CardName::TownHouse,"TownHouse");
    addProperty(CardId::ManorHouse_1,CardName::ManorHouse,"ManorHouse");
    addProperty(CardId::ManorHouse_2,CardName::ManorHouse,"ManorHouse");
    addProperty(CardId::ManorHouse_3,CardName::ManorHouse,"ManorHouse");

@@ -22,6 +22,7 @@ struct ThreadData
 {
    GameMaster *gm;
    long unsigned int numGames;
+   long unsigned int printIncrement;
 };
 
 class GameMaster
@@ -42,6 +43,7 @@ protected:
    Players players;
    pthread_t tid;
    ThreadData data;
+   float efficiencyFilter;
 
    void planningPhase();
    void errandsPhase();

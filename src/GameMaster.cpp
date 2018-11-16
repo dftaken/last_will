@@ -27,7 +27,6 @@ void testIndexer();
 
 static char threadSignal = 0;
 static char threadFinished = 0;
-#define GAME_PRINT_INCREMENT 1;
 void* execute_thread(void *arg)
 {
    ThreadData *data = (ThreadData*)arg;
@@ -41,7 +40,7 @@ void* execute_thread(void *arg)
       {
          data->gm->executeGame(count+1);
          count++;
-         long unsigned int tmp = count / GAME_PRINT_INCREMENT;
+         long unsigned int tmp = count / data->printIncrement;
          if (tmp != lastPost)
          {
             fprintf(stderr,"Games Completed: %lu\n",count);
@@ -66,7 +65,8 @@ GameMaster::GameMaster() :
    gameboard(NULL),
    players(),
    tid(),
-   data()
+   data(),
+   efficiencyFilter(0.0f)
 {
    // Intentionally left blank
 }
@@ -87,6 +87,7 @@ void GameMaster::run(int argc, char **argv)
 {
    data.gm = this;
    data.numGames = -1;
+   data.printIncrement = 1000;
 
    processCmdLine(argc,argv);
 
@@ -94,7 +95,7 @@ void GameMaster::run(int argc, char **argv)
    players.push_back(new RandomAi("AI_1"));
    players.push_back(new RandomAi("AI_2"));
    players.push_back(new RandomAi("AI_3"));
-//   players.push_back(new LearningAi("SMARTY"));
+   players.push_back(new LearningAi("SMARTY"));
 
    printf("Registering players\n");
    for (Players::iterator itr = players.begin(); itr != players.end(); ++itr)
@@ -236,6 +237,14 @@ void GameMaster::processCmdLine(int argc, char **argv)
             throw std::runtime_error("Failed to open output plan file.");
          }
       }
+      else if (strcmp(argv[i],"-eo")==0 && (i+1) < argc)
+      {
+         if (!Logger::instance().openErrandFile(argv[i+1]))
+         {
+            fprintf(stderr,"Failed to open output errand file \"%s\"\n",argv[i+1]);
+            throw std::runtime_error("Failed to open output errand file.");
+         }
+      }
       else if (strcmp(argv[i],"-db")==0 && (i+1) < argc)
       {
          if (!Database::instance().loadDatabase(argv[i+1]))
@@ -247,6 +256,14 @@ void GameMaster::processCmdLine(int argc, char **argv)
       else if (strcmp(argv[i],"-n")==0 && (i+1) < argc)
       {
          sscanf(argv[i+1],"%lu",&data.numGames);
+      }
+      else if (strcmp(argv[i],"-ef")==0 && (i+1) < argc)
+      {
+         sscanf(argv[i+1],"%f",&efficiencyFilter);
+      }
+      else if (strcmp(argv[i],"-pi")==0 && (i+1) < argc)
+      {
+         sscanf(argv[i+1],"%lu",&data.printIncrement);
       }
    }
 }
@@ -300,6 +317,8 @@ void GameMaster::planningPhase()
             for (size_t i = 0; i < choices.size(); ++i)
             {
                Card::Ptr card = gameboard->decks[choices.at(i)]->draw();
+               if (card == NULL)
+                  throw std::runtime_error("DREW A NULL CARD!");
                record.cardsDrawn.push_back(card);
                givePlayerCard((*itr),card);
             }
@@ -768,52 +787,105 @@ void GameMaster::printHelpMessage()
 
 void GameMaster::recordGameboardCaches(long unsigned int gameId)
 {
+   using namespace std;
+   map<string,float> playerEfficiencies;
+   bool efficiencyFilterMet = false;
+   for (map<string,int>::iterator itr = gameboard->gameStats.endingMoney.begin(); itr != gameboard->gameStats.endingMoney.end(); ++itr)
+   {
+      float efficiency = (float)(gameboard->gameStats.startingMoney - itr->second) / (float)gameboard->gameStats.startingMoney;
+      playerEfficiencies.insert(pair<string,float>(itr->first,efficiency));
+
+      if (efficiency >= efficiencyFilter)
+         efficiencyFilterMet = true;
+
+      if (efficiencyFilter > 0.0f && efficiency >= efficiencyFilter)
+         fprintf(stderr,"Player \"%s\" met the efficiency filter of %.02f with an efficiency of %.02f\n",itr->first.c_str(),efficiencyFilter,efficiency);
+   }
+
    // Record Action Stats
    for (size_t ndx = 0; ndx < gameboard->actionCache.size(); ++ndx)
    {
-      bool won = gameboard->actionCache[ndx].player == gameboard->lastWinner;
-      Logger::instance().recordAction(
-         gameId,
-         won,
-         gameboard->actionCache[ndx].player->getName(),
-         gameboard->actionCache[ndx].round,
-         gameboard->actionCache[ndx].action);
-      Database::instance().recordAction(
-         won,
-         gameboard->actionCache[ndx].round,
-         gameboard->actionCache[ndx].action);
+      if (playerEfficiencies[gameboard->actionCache[ndx].player->getName()] >= efficiencyFilter)
+      {
+         bool won = gameboard->actionCache[ndx].player == gameboard->lastWinner;
+         Logger::instance().recordAction(
+            gameId,
+            won,
+            gameboard->actionCache[ndx].player->getName(),
+            gameboard->actionCache[ndx].round,
+            gameboard->actionCache[ndx].action);
+         Database::instance().recordAction(
+            won,
+            gameboard->actionCache[ndx].round,
+            gameboard->actionCache[ndx].action);
+      }
    }
 
    // Record Plan Stats
    for (PlanDataSet::iterator itr = gameboard->planCache.begin(); itr != gameboard->planCache.end(); ++itr)
    {
-      bool won = itr->player == gameboard->lastWinner;
-      Logger::instance().recordPlan(
-         gameId,
-         won,
-         itr->player->getName(),
-         itr->round,
-         itr->plan,
-         itr->cardsDrawn);
+      if (playerEfficiencies[itr->player->getName()] >= efficiencyFilter)
+      {
+         bool won = itr->player == gameboard->lastWinner;
+         Logger::instance().recordPlan(
+            gameId,
+            won,
+            itr->player->getName(),
+            itr->round,
+            itr->plan,
+            itr->cardsDrawn);
+         unsigned int properties = 0;
+         unsigned int events = 0;
+         unsigned int helpers = 0;
+         unsigned int companions = 0;
+         for (size_t i = 0; i < itr->cardsDrawn.size(); ++i)
+         {
+            switch (itr->cardsDrawn[i]->group)
+            {
+               case CardGroup::Property:
+                  properties++;
+                  break;
+               case CardGroup::Event:
+                  events++;
+                  break;
+               case CardGroup::HelperExpense:
+                  helpers++;
+                  break;
+               case CardGroup::Companion:
+                  companions++;
+                  break;
+               default:
+                  break;
+            }
+         }
+         Database::instance().recordDraw(won,itr->round,properties,events,helpers,companions);
+      }
    }
 
    // Record Errand Stats
    for (ErrandDataSet::iterator itr = gameboard->errandCache.begin(); itr != gameboard->errandCache.end(); ++itr)
    {
-      bool won = itr->player == gameboard->lastWinner;
-      Logger::instance().recordErrand(
-         gameId,
-         won,
-         itr->player->getName(),
-         itr->round,
-         itr->type,
-         itr->card);
+      if (playerEfficiencies[itr->player->getName()] >= efficiencyFilter)
+      {
+         bool won = itr->player == gameboard->lastWinner;
+         Logger::instance().recordErrand(
+            gameId,
+            won,
+            itr->player->getName(),
+            itr->round,
+            itr->type,
+            itr->card);
+      }
    }
 
    // Record Game Stats
-   Logger::instance().recordStats(
-      gameId,
-      gameboard->gameStats.startingMoney,
-      gameboard->gameStats.winner,
-      gameboard->gameStats.endingMoney);
+   if (efficiencyFilterMet)
+   {
+      fprintf(stderr,"  Game %lu (Starting Money = %d) recorded\n",gameId,gameboard->gameStats.startingMoney);
+      Logger::instance().recordStats(
+         gameId,
+         gameboard->gameStats.startingMoney,
+         gameboard->gameStats.winner,
+         gameboard->gameStats.endingMoney);
+   }
 }

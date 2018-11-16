@@ -42,6 +42,14 @@ public:
       int &guestCost);
    static Indexes getCardNdxs(int cardId);
 
+   static size_t getNumDraws();
+   static size_t getDrawNdx(
+      int round,
+      unsigned int propertyDraws,
+      unsigned int eventDraws,
+      unsigned int helperDraws,
+      unsigned int companionDraws);
+
 private:
    // Action Index Permutation Counts
    static int roundCount;

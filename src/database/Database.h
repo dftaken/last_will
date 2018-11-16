@@ -10,10 +10,13 @@
 
 #include <assets/Action.h>
 
-struct ActionRecord
+struct Record
 {
    unsigned int w; // Wins
    unsigned int l; // Losses
+
+   bool operator<(const Record &rhs);
+   bool operator>(const Record &rhs);
 };
 
 class Database
@@ -25,14 +28,20 @@ public:
 
    bool loadDatabase(char*);
    void recordAction(bool,int,Action);
-   ActionRecord *getActions();
-   float computeScore(ActionRecord &);
+   Record *getActions();
+   float computeScore(Record &);
+
+   bool loadDrawDB(char*);
+   void recordDraw(bool,int,unsigned int, unsigned int, unsigned int, unsigned int);
+   Record *getDraws();
 
 private:
    Database();
 
    int fd;
-   ActionRecord *actions;
+   int drawFd;
+   Record *actions;
+   Record *draws;
 };
 
 #endif /* DATABASE_H_ */

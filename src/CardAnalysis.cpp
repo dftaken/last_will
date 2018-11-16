@@ -437,6 +437,83 @@ void printAnalysis(Card::Ptr card)
 #endif
 }
 
+void printStatsHeader()
+{
+   fprintf(out,"VLR# = Value Level Resource #\n");
+   fprintf(out,"VLV# = Value Level Value #\n");
+   fprintf(out,"ULC# = Upgrade Level Cost #\n");
+   fprintf(out,"ULE# = Upgrade Level Expense #\n");
+   fprintf(out,"Card ID,Card Name,Card Group,Card Type,");
+   fprintf(out,"Card Deck,String Name,");
+   fprintf(out,"VLR0,VLR1,VLR2,VLR3,VLR4,VLR5,");
+   fprintf(out,"VLV0,VLV1,VLV2,VLV3,VLV4,VLV5,");
+   fprintf(out,"ULC0,ULC1,ULC2,ULC3,ULC4,ULC5,");
+   fprintf(out,"ULE0,ULE1,ULE2,ULE3,ULE4,ULE5,");
+   fprintf(out,"Additive Upgrades,Expense Cost,Crowns,Effect\n");
+}
+
+void printCardStats(Card::Ptr card)
+{
+   fprintf(out,"%s",CardId::toString(card->id).c_str());
+   fprintf(out,",%s",CardName::toString(card->name).c_str());
+   fprintf(out,",%s",CardGroup::toString(card->group).c_str());
+   fprintf(out,",%s",CardType::toString(card->type).c_str());
+   fprintf(out,",%s",CardDeck::toString(card->deck).c_str());
+   fprintf(out,",%s",card->strName.c_str());
+   for (int i = 0; i < 6; ++i)
+   {
+      if (card->valueLevels.size() > i)
+      {
+         fprintf(out,",%s",Resource::toString(card->valueLevels[i].resource).c_str());
+      }
+      else
+      {
+         fprintf(out,",-");
+      }
+   }
+   for (int i = 0; i < 6; ++i)
+   {
+      if (card->valueLevels.size() > i)
+      {
+         fprintf(out,",%d",card->valueLevels[i].value);
+      }
+      else
+      {
+         fprintf(out,",-");
+      }
+   }
+   for (int i = 0; i < 6; ++i)
+   {
+      if (card->upgradeLevels.size() > i)
+      {
+         fprintf(out,",%s",Resource::toString(card->upgradeLevels[i].cost).c_str());
+      }
+      else
+      {
+         fprintf(out,",-");
+      }
+   }
+   for (int i = 0; i < 6; ++i)
+   {
+      if (card->upgradeLevels.size() > i)
+      {
+         fprintf(out,",%d",card->upgradeLevels[i].expense);
+      }
+      else
+      {
+         fprintf(out,",-");
+      }
+   }
+   if (card->additiveUpgrades)
+      fprintf(out,",true");
+   else
+      fprintf(out,",false");
+   fprintf(out,",%u",card->expenseCost);
+   fprintf(out,",%d",card->crowns);
+   fprintf(out,",%s",Effect::toString(card->effect).c_str());
+   fprintf(out,"\n");
+}
+
 int main(int argc, char **argv)
 {
 #if UNIFIED_OUT
@@ -449,12 +526,23 @@ int main(int argc, char **argv)
    }
 #endif
 
-   printHeader();
+//   printHeader();
+   printStatsHeader();
 
+   size_t maxVLSize = 0;
+   size_t maxULSize = 0;
    for (int i = CardId::Farm_1; i <= CardId::Steward_S2; ++i)
    {
-      printAnalysis(CardLibrary::getInstance()->getCard(((CardIdType)i)));
+      Card::Ptr card = CardLibrary::getInstance()->getCard(((CardIdType)i));
+//      printAnalysis(CardLibrary::getInstance()->getCard(((CardIdType)i)));
+      printCardStats(CardLibrary::getInstance()->getCard(((CardIdType)i)));
+//      if (card->valueLevels.size() > maxVLSize)
+//         maxVLSize = card->valueLevels.size();
+//      if (card->upgradeLevels.size() > maxULSize)
+//         maxULSize = card->upgradeLevels.size();
    }
+//   fprintf(stderr,"Max VL Size = %lu\n",maxVLSize);
+//   fprintf(stderr,"MAX UL Size = %lu\n",maxULSize);
 
 #if UNIFIED_OUT
    fclose(out);

@@ -9,7 +9,7 @@
 #include <database/Database.h>
 #include <database/Indexer.h>
 
-float calcRatio(ActionRecord ar)
+float calcRatio(Record ar)
 {
    float ratio = 0.0f;
    if (ar.w + ar.l > 0)
@@ -28,17 +28,23 @@ float calcRatio(ActionRecord ar)
 
 int main(int argc, char **argv)
 {
-   ActionRecord *actions = Database::instance().getActions();
+   bool singlePass = false;
+   if (argc > 1)
+      Database::instance().loadDatabase(argv[1]);
+   if (argc > 2)
+      singlePass = true;
 
-   printf("Starting %s\n",argv[0]);
+   Record *actions = Database::instance().getActions();
+
+   fprintf(stderr,"Starting %s\n",argv[0]);
    float highRatio = -1.0f;
    size_t highNdx = 0;
    while (true)
    {
       for (size_t i = 0; i < Indexer::getNumActions(); ++i)
       {
-         ActionRecord ari = actions[i];
-         ActionRecord arh = actions[highNdx];
+         Record ari = actions[i];
+         Record arh = actions[highNdx];
          long unsigned int sumi = ari.w + ari.l;
          long unsigned int sumh = arh.w + arh.l;
          float ratio = calcRatio(ari);
@@ -46,12 +52,16 @@ int main(int argc, char **argv)
          if (ratio > high ||
              (ratio == high && sumi > sumh))
          {
-            printf("Action[%lu] ( %lu , %lu | %.03f ) > Action[%lu] ( %lu , %lu | %.03f )\n",
+            fprintf(stderr,"Action[%lu] ( %lu , %lu | %.03f ) > Action[%lu] ( %lu , %lu | %.03f )\n",
                    i,ari.w,ari.l,ratio,
                    highNdx,arh.w,arh.l,high);
             highNdx = i;
          }
+         if (singlePass && (ari.w > 0 || ari.l > 0))
+            fprintf(stderr,"ratio of %lu = %.03f (W / L = %lu / %lu)\n",i,ratio,ari.w,ari.l);
       }
+      if (singlePass)
+         break;
    }
 
    return 0;

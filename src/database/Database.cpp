@@ -15,9 +15,63 @@
 #include <unistd.h>
 #include <stdexcept>
 
+float computeScore(unsigned int w, unsigned int l)
+{
+   float score = 0.0f;
+   if (w != 0 || l != 0)
+   {
+      if (w >= l)
+      {
+         score = ((float)(w - l)) / (float)(w + l);
+      }
+      else
+      {
+         score = ((float)(l - w)) / (float)(w + l);
+         score *= -1.0f;
+      }
+   }
+   return score;
+}
+
+bool Record::operator <(const Record &rhs)
+{
+   float ls = computeScore(w,l);
+   float rs = computeScore(rhs.w,rhs.l);
+   if (ls < rs)
+   {
+      return true;
+   }
+   else if (ls == rs)
+   {
+      long unsigned int ltotal = w+l;
+      long unsigned int rtotal = rhs.w+rhs.l;
+      if (ltotal < rtotal)
+         return true;
+   }
+   return false;
+}
+
+bool Record::operator >(const Record &rhs)
+{
+   float ls = computeScore(w,l);
+   float rs = computeScore(rhs.w,rhs.l);
+   if (ls > rs)
+      return true;
+   else if (ls == rs)
+   {
+      long unsigned int ltotal = w+l;
+      long unsigned int rtotal = rhs.w+rhs.l;
+      if (ltotal > rtotal)
+         return true;
+   }
+   return false;
+}
+
 Database::Database() :
    fd(0),
-   actions(NULL)
+   drawFd(0),
+   actions(NULL),
+   draws(NULL)
 {
    // Intentionally left blank
 }
@@ -26,14 +80,15 @@ Database::~Database()
 {
    if (fd != 0)
       close(fd);
+   if (drawFd != 0)
+      close(drawFd);
    if (actions != NULL)
    {
-      for (size_t i = 0; i < Indexer::getNumActions(); ++i)
-      {
-//         if (actions[i].w != 0 || actions[i].l != 0)
-//            printf("Action %lu: W = %u , L = %u\n",i,actions[i].w,actions[i].l);
-      }
-      munmap(actions,sizeof(ActionRecord)*Indexer::getNumActions());
+      munmap(actions,sizeof(Record)*Indexer::getNumActions());
+   }
+   if (draws != NULL)
+   {
+      munmap(draws,sizeof(Record)*Indexer::getNumDraws());
    }
 }
 
@@ -53,7 +108,7 @@ bool Database::loadDatabase(char *filename)
    }
 
    // Stretch file size
-   if (lseek(fd,sizeof(ActionRecord)*Indexer::getNumActions(),SEEK_SET) == -1)
+   if (lseek(fd,sizeof(Record)*Indexer::getNumActions(),SEEK_SET) == -1)
    {
       printf("lseek failed\n");
       return false;
@@ -67,7 +122,7 @@ bool Database::loadDatabase(char *filename)
    }
 
    // Map the database
-   actions = (ActionRecord*) mmap(NULL,sizeof(ActionRecord)*Indexer::getNumActions(),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
+   actions = (Record*) mmap(NULL,sizeof(Record)*Indexer::getNumActions(),PROT_READ|PROT_WRITE,MAP_SHARED,fd,0);
    if (actions == MAP_FAILED)
    {
       printf("Mapping failed!\n");
@@ -106,7 +161,7 @@ void Database::recordAction(bool wl, int round, Action action)
       actions[ndx].l++;
 }
 
-ActionRecord* Database::getActions()
+Record* Database::getActions()
 {
    if (actions == NULL && !loadDatabase("action_database.db"))
       throw std::runtime_error("Do not have a database loaded.");
@@ -114,20 +169,66 @@ ActionRecord* Database::getActions()
    return actions;
 }
 
-float Database::computeScore(ActionRecord &record)
+float Database::computeScore(Record &record)
 {
-   float score = 0.0f;
-   if (record.w != 0 || record.l != 0)
+   return ::computeScore(record.w,record.l);
+}
+
+/*~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~*/
+
+bool Database::loadDrawDB(char *filename)
+{
+   drawFd = open(filename,O_RDWR | O_CREAT,S_IREAD|S_IWRITE|S_IRGRP|S_IWGRP|S_IROTH|S_IWOTH);
+   if (drawFd == -1)
    {
-      if (record.w >= record.l)
-      {
-         score = ((float)(record.w - record.l)) / (float)(record.w + record.l);
-      }
-      else
-      {
-         score = ((float)(record.l - record.w)) / (float)(record.w + record.l);
-         score *= -1.0f;
-      }
+      printf("Failed to open file\n");
+      return false;
    }
-   return score;
+
+   // Stretch file size
+   if (lseek(drawFd,sizeof(Record)*Indexer::getNumDraws(),SEEK_SET) == -1)
+   {
+      printf("lseek failed\n");
+      return false;
+   }
+
+   // Make sure file size increases by writing data to it
+   if (write(drawFd,"",1) == -1)
+   {
+      printf("write failed\n");
+      return false;
+   }
+
+   // Map the database
+   draws = (Record*) mmap(NULL,sizeof(Record)*Indexer::getNumDraws(),PROT_READ|PROT_WRITE,MAP_SHARED,drawFd,0);
+   if (draws == MAP_FAILED)
+   {
+      printf("Mapping failed!\n");
+      return false;
+   }
+
+   return true;
+}
+
+void Database::recordDraw(
+   bool wl,
+   int round,
+   unsigned int properties,
+   unsigned int events,
+   unsigned int helpers,
+   unsigned int companions)
+{
+   unsigned int ndx = Indexer::getDrawNdx(round,properties,events,helpers,companions);
+   if (wl)
+      draws[ndx].w++;
+   else
+      draws[ndx].l++;
+}
+
+Record* Database::getDraws()
+{
+   if (draws == NULL && !loadDrawDB("draws_database.db"))
+      throw std::runtime_error("Do not have a draw database loaded.");
+
+   return draws;
 }

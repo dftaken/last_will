@@ -76,6 +76,7 @@ public:
    virtual BoardSpots getAllErrands(GamePlayer::Ptr);
    virtual Actions getAvailableActions(GamePlayer::Ptr);
    virtual bool processAction(GamePlayer::Ptr,Action);
+   virtual int getRound() {return (int)round;}
 
    /*
     * Game Master Functions

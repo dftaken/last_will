@@ -300,3 +300,27 @@ Indexes Indexer::getCardNdxs(int cardId)
    }
    return ndxs;
 }
+
+size_t Indexer::getNumDraws()
+{
+   static size_t numDraws = 7*14*14*14*14;
+   return numDraws;
+}
+
+size_t Indexer::getDrawNdx(
+   int round,
+   unsigned int propertyDraws,
+   unsigned int eventDraws,
+   unsigned int helperDraws,
+   unsigned int companionDraws)
+{
+   if (round < 1 ||
+       round > 7 ||
+       propertyDraws > 13 ||
+       eventDraws > 13 ||
+       helperDraws > 13 ||
+       companionDraws > 13)
+      throw std::runtime_error("Invalid Draw ndx attributes");
+   size_t ndx = (round-1)*14*14*14*14 + propertyDraws*14*14*14 + eventDraws*14*14 + helperDraws*14 + companionDraws;
+   return ndx;
+}

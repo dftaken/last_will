@@ -32,6 +32,8 @@ public:
    virtual Actions getAvailableActions(GamePlayer::Ptr)=0;
    virtual bool processAction(GamePlayer::Ptr,Action)=0;
 
+   virtual int getRound()=0;
+
 protected:
    GameBoardInterface() {};
 };

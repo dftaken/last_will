@@ -23,12 +23,13 @@ public:
    virtual CardDeckTypes chooseCardDraws(int,bool=false);
 //   virtual Plan::Ptr pickPlan();
 //   virtual BoardSpot::Ptr pickErrand();
-//   virtual void executeActions();
+   virtual void executeActions();
 
 protected:
    void sortCardsByScore(Cards&); // [0] = highest score
    float getCardScore(Card*);
    void getBestDraws(int num,unsigned int &p, unsigned int &e, unsigned int &h, unsigned int &c);
+   size_t getBestActionNdx(Actions options);
 
    Record *actions;
    Record *draws;

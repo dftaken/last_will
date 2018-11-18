@@ -7,6 +7,7 @@
 
 #include <players/LearningAi.h>
 #include <database/Indexer.h>
+#include <stdexcept>
 
 using namespace std;
 
@@ -168,37 +169,37 @@ CardDeckTypes LearningAi::chooseCardDraws(int numDraws, bool hardLimit)
    return choices;
 }
 
-//void LearningAi::executeActions()
-//{
-//   Actions options = gameboard->getAvailableActions(this);
-//   for (Actions::iterator itr = options.begin(); itr != options.end();)
-//   {
-//      if (itr->type == ActionType::Discard)
-//         itr = options.erase(itr);
-//      else
-//         ++itr;
-//   }
-//
-//   while (options.size() > 0)
-//   {
-//      size_t bestNdx = -1;
-//      if (!gameboard->processAction(this,options[ndx]))
-//      {
-//         throw std::runtime_error(
-//            "Something went wrong trying to process an action.");
-//      }
-//
-//      // Get new set of possible actions and cull out discard options
-//      options = gameboard->getAvailableActions(this);
-//      for (Actions::iterator itr = options.begin(); itr != options.end();)
-//      {
-//         if (itr->type == ActionType::Discard)
-//            itr = options.erase(itr);
-//         else
-//            ++itr;
-//      }
-//   }
-//}
+void LearningAi::executeActions()
+{
+   Actions options = gameboard->getAvailableActions(this);
+   for (Actions::iterator itr = options.begin(); itr != options.end();)
+   {
+      if (itr->type == ActionType::Discard)
+         itr = options.erase(itr);
+      else
+         ++itr;
+   }
+
+   while (options.size() > 0)
+   {
+      size_t ndx = getBestActionNdx(options);
+      if (!gameboard->processAction(this,options[ndx]))
+      {
+         throw std::runtime_error(
+            "Something went wrong trying to process an action.");
+      }
+
+      // Get new set of possible actions and cull out discard options
+      options = gameboard->getAvailableActions(this);
+      for (Actions::iterator itr = options.begin(); itr != options.end();)
+      {
+         if (itr->type == ActionType::Discard)
+            itr = options.erase(itr);
+         else
+            ++itr;
+      }
+   }
+}
 
 void LearningAi::sortCardsByScore(Cards &cards)
 {
@@ -293,4 +294,35 @@ void LearningAi::getBestDraws(
          }
       }
    }
+}
+
+size_t LearningAi::getBestActionNdx(Actions options)
+{
+   size_t bestNdx = -1;
+   size_t bestI = -1;
+   for (size_t i = 0; i < options.size(); ++i)
+   {
+      size_t ndx = Indexer::getActionNdx(
+         gameboard->getRound(),
+         options[i].type,
+         options[i].card->id,
+         options[i].cost[Resource::Money],
+         options[i].cost[Resource::Action],
+         options[i].cost[Resource::Horse],
+         options[i].cost[Resource::Dog],
+         options[i].cost[Resource::Chef],
+         options[i].cost[Resource::Guest]);
+      if (bestNdx == -1)
+      {
+         bestI = i;
+         bestNdx = ndx;
+      }
+      else if (actions[ndx] > actions[bestNdx])
+      {
+         bestI = i;
+         bestNdx = ndx;
+      }
+   }
+
+   return bestI;
 }

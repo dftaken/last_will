@@ -66,7 +66,8 @@ GameMaster::GameMaster() :
    players(),
    tid(),
    data(),
-   efficiencyFilter(0.0f)
+   efficiencyFilter(0.0f),
+   suppressEfficiencyFilterPrint(false)
 {
    // Intentionally left blank
 }
@@ -265,6 +266,10 @@ void GameMaster::processCmdLine(int argc, char **argv)
       {
          sscanf(argv[i+1],"%lu",&data.printIncrement);
       }
+      else if (strcmp(argv[i],"-sef")==0)
+      {
+         suppressEfficiencyFilterPrint = true;
+      }
    }
 }
 
@@ -317,8 +322,8 @@ void GameMaster::planningPhase()
             for (size_t i = 0; i < choices.size(); ++i)
             {
                Card::Ptr card = gameboard->decks[choices.at(i)]->draw();
-               if (card == NULL)
-                  throw std::runtime_error("DREW A NULL CARD!");
+//               if (card == NULL)
+//                  throw std::runtime_error("DREW A NULL CARD!");
                record.cardsDrawn.push_back(card);
                givePlayerCard((*itr),card);
             }
@@ -881,7 +886,8 @@ void GameMaster::recordGameboardCaches(long unsigned int gameId)
    // Record Game Stats
    if (efficiencyFilterMet)
    {
-      fprintf(stderr,"  Game %lu (Starting Money = %d) recorded\n",gameId,gameboard->gameStats.startingMoney);
+      if(!suppressEfficiencyFilterPrint)
+         fprintf(stderr,"  Game %lu (Starting Money = %d) recorded\n",gameId,gameboard->gameStats.startingMoney);
       Logger::instance().recordStats(
          gameId,
          gameboard->gameStats.startingMoney,

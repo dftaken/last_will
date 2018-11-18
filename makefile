@@ -7,3 +7,4 @@ all:
 
 clean:
 	rm $(BLD_DIR)/*
+	rm core

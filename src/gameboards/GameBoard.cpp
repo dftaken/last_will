@@ -681,14 +681,14 @@ void GameBoard::initCardSpots()
                                     CardDeck::Events,
                                     CardDeck::Events));
       cardSpots.push_back(BoardSpot(Spot::Card,
-                                    CardDeck::Companions,
-                                    CardDeck::Companions,
-                                    CardDeck::Companions,
-                                    CardDeck::Companions,
+                                    CardDeck::HelpersExpenses,
+                                    CardDeck::HelpersExpenses,
+                                    CardDeck::HelpersExpenses,
+                                    CardDeck::HelpersExpenses,
                                     CardDeck::Events,
                                     CardDeck::Events,
                                     CardDeck::Events));
-      cardSpots.push_back(BoardSpot(Spot::Card,CardDeck::Companions));
+      cardSpots.push_back(BoardSpot(Spot::Card,CardDeck::HelpersExpenses));
       cardSpots.push_back(BoardSpot(Spot::Card,CardDeck::WildCards));
       if (numPlayers == 3)
       {
@@ -721,14 +721,14 @@ void GameBoard::initCardSpots()
                                     CardDeck::Events,
                                     CardDeck::Events));
       cardSpots.push_back(BoardSpot(Spot::Card,
-                                    CardDeck::Companions,
-                                    CardDeck::Companions,
-                                    CardDeck::Companions,
-                                    CardDeck::Companions,
+                                    CardDeck::HelpersExpenses,
+                                    CardDeck::HelpersExpenses,
+                                    CardDeck::HelpersExpenses,
+                                    CardDeck::HelpersExpenses,
                                     CardDeck::Events,
                                     CardDeck::Events,
                                     CardDeck::Events));
-      cardSpots.push_back(BoardSpot(Spot::Card,CardDeck::Companions));
+      cardSpots.push_back(BoardSpot(Spot::Card,CardDeck::HelpersExpenses));
       cardSpots.push_back(BoardSpot(Spot::Card,CardDeck::Special));
       cardSpots.push_back(BoardSpot(Spot::Card,CardDeck::Special));
       cardSpots.push_back(BoardSpot(Spot::Card,

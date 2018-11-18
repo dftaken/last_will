@@ -9,6 +9,7 @@
 #include <assets/cards/CardLibrary.h>
 #include <system_utils/SysUtils.h>
 #include <Logging.h>
+#include <stdexcept>
 
 using namespace std;
 
@@ -113,6 +114,20 @@ Card::Ptr Deck::draw()
    if (drawPile.size() == 0 && type != CardDeck::Special)
    {
       shuffle();
+      if (drawPile.size() <= 0)
+      {
+         CardLibrary::Database cards = CardLibrary::getInstance()->getDatabase();
+         for (CardLibrary::Database::iterator itr = cards.begin(); itr != cards.end(); ++itr)
+         {
+            if (itr->second->deck == type)
+            {
+               fprintf(stderr,"%s located at %s\n",
+                       CardId::toString(itr->second->id).c_str(),
+                       itr->second->location->getName().c_str());
+            }
+         }
+         throw std::runtime_error("Shuffled but still no draw pile!");
+      }
    }
 
    Card::Ptr output = NULL;

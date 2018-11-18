@@ -44,6 +44,7 @@ protected:
    pthread_t tid;
    ThreadData data;
    float efficiencyFilter;
+   bool suppressEfficiencyFilterPrint;
 
    void planningPhase();
    void errandsPhase();

@@ -42,7 +42,7 @@ public:
       SpotType type,
       Card::Ptr card);
 
-   bool openStatsFile(char*,std::map<std::string,int>);
+   bool openStatsFile(const char*,std::map<std::string,int>);
    void recordStats(
       long unsigned int,
       int startingMoney,

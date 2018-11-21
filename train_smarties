@@ -1,0 +1,4 @@
+last_will -ef 0.7 -pi 1 -db analysis/filtered_70_action_db.db \
+-so trash/stats_out.csv -eo trash/errand_out.csv \
+-po trash/plan_out.csv -ao trash/action_out.csv \
+-lai SMARTY_1 -lai SMARTY_2 -lai SMARTY_3 -lai SMARTY_4

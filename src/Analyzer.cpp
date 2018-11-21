@@ -36,7 +36,7 @@ int main(int argc, char **argv)
 
    Record *actions = Database::instance().getActions();
 
-   fprintf(stderr,"Starting %s\n",argv[0]);
+   fprintf(stderr,"Starting %s, opening \"%s\"\n",argv[0],argv[1]);
    float highRatio = -1.0f;
    size_t highNdx = 0;
    while (true)

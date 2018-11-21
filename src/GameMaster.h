@@ -45,6 +45,8 @@ protected:
    ThreadData data;
    float efficiencyFilter;
    bool suppressEfficiencyFilterPrint;
+   std::string statsOutput;
+   std::map<std::string,int> playersToLoad;
 
    void planningPhase();
    void errandsPhase();

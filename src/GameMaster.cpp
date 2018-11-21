@@ -23,6 +23,8 @@
 #include <players/RandomAi.h>
 #include <players/LearningAi.h>
 
+using namespace std;
+
 void testIndexer();
 
 static char threadSignal = 0;
@@ -67,7 +69,8 @@ GameMaster::GameMaster() :
    tid(),
    data(),
    efficiencyFilter(0.0f),
-   suppressEfficiencyFilterPrint(false)
+   suppressEfficiencyFilterPrint(false),
+   statsOutput("")
 {
    // Intentionally left blank
 }
@@ -93,10 +96,34 @@ void GameMaster::run(int argc, char **argv)
    processCmdLine(argc,argv);
 
    gameboard = new GameBoard();
-   players.push_back(new RandomAi("AI_1"));
-   players.push_back(new RandomAi("AI_2"));
-   players.push_back(new RandomAi("AI_3"));
-   players.push_back(new LearningAi("SMARTY"));
+   if (playersToLoad.empty())
+   {
+      players.push_back(new RandomAi("AI_1"));
+      players.push_back(new RandomAi("AI_2"));
+      players.push_back(new RandomAi("AI_3"));
+      players.push_back(new LearningAi("SMARTY"));
+   }
+   else
+   {
+      for (map<string,int>::iterator itr = playersToLoad.begin(); itr != playersToLoad.end(); ++itr)
+      {
+         switch (itr->second)
+         {
+            case 1:
+               players.push_back(new LearningAi(itr->first));
+               break;
+            case 0:
+            default:
+               players.push_back(new RandomAi(itr->first));
+               break;
+         }
+      }
+   }
+
+   if (!statsOutput.empty())
+   {
+      Logger::instance().openStatsFile(statsOutput.c_str(),playersToLoad);
+   }
 
    printf("Registering players\n");
    for (Players::iterator itr = players.begin(); itr != players.end(); ++itr)
@@ -246,6 +273,10 @@ void GameMaster::processCmdLine(int argc, char **argv)
             throw std::runtime_error("Failed to open output errand file.");
          }
       }
+      else if (strcmp(argv[i],"-so")==0 && (i+1) < argc)
+      {
+         statsOutput = argv[i+1];
+      }
       else if (strcmp(argv[i],"-db")==0 && (i+1) < argc)
       {
          if (!Database::instance().loadDatabase(argv[i+1]))
@@ -253,6 +284,14 @@ void GameMaster::processCmdLine(int argc, char **argv)
             fprintf(stderr,"Failed to open database file \"%s\"\n",argv[i+1]);
             throw std::runtime_error("Failed to open database file.");
          }
+      }
+      else if (strcmp(argv[i],"-rai")==0 && (i+1) < argc)
+      {
+         playersToLoad.insert(pair<string,int>(argv[i+1],0));
+      }
+      else if (strcmp(argv[i],"-lai")==0 && (i+1) < argc)
+      {
+         playersToLoad.insert(pair<string,int>(argv[i+1],1));
       }
       else if (strcmp(argv[i],"-n")==0 && (i+1) < argc)
       {

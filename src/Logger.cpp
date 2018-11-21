@@ -241,7 +241,7 @@ void Logger::writeErrandHeader()
  * Stats File
  */
 
-bool Logger::openStatsFile(char *fname, map<string,int> players)
+bool Logger::openStatsFile(const char *fname, map<string,int> players)
 {
    if (statsFile != NULL)
    {
